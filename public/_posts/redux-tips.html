@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redux recalls | Tech notes</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="description" content="Record what I have learnt so far ..">
+    <meta name="theme-color" content="#ffffff">
+    
+    <link rel="preload" href="/assets/css/0.styles.a509abab.css" as="style"><link rel="preload" href="/assets/js/app.585e8377.js" as="script"><link rel="preload" href="/assets/js/2.a511a718.js" as="script"><link rel="preload" href="/assets/js/41.29fae567.js" as="script"><link rel="prefetch" href="/assets/js/10.1756a30c.js"><link rel="prefetch" href="/assets/js/11.8852df07.js"><link rel="prefetch" href="/assets/js/12.fae0e758.js"><link rel="prefetch" href="/assets/js/13.b7746d05.js"><link rel="prefetch" href="/assets/js/14.89778e04.js"><link rel="prefetch" href="/assets/js/15.8e5092a7.js"><link rel="prefetch" href="/assets/js/16.a8cf901d.js"><link rel="prefetch" href="/assets/js/17.5110c4da.js"><link rel="prefetch" href="/assets/js/18.30773e2c.js"><link rel="prefetch" href="/assets/js/19.0641b368.js"><link rel="prefetch" href="/assets/js/20.427ea991.js"><link rel="prefetch" href="/assets/js/21.90115886.js"><link rel="prefetch" href="/assets/js/22.17fa2bee.js"><link rel="prefetch" href="/assets/js/23.98d6a3df.js"><link rel="prefetch" href="/assets/js/24.a00b3554.js"><link rel="prefetch" href="/assets/js/25.668e389f.js"><link rel="prefetch" href="/assets/js/26.d97b5b36.js"><link rel="prefetch" href="/assets/js/27.b20ce41d.js"><link rel="prefetch" href="/assets/js/28.abc250d9.js"><link rel="prefetch" href="/assets/js/29.95181677.js"><link rel="prefetch" href="/assets/js/3.eea82767.js"><link rel="prefetch" href="/assets/js/30.4e4a5d70.js"><link rel="prefetch" href="/assets/js/31.c8273f0b.js"><link rel="prefetch" href="/assets/js/32.5cf18170.js"><link rel="prefetch" href="/assets/js/33.74d184b4.js"><link rel="prefetch" href="/assets/js/34.f23377dd.js"><link rel="prefetch" href="/assets/js/35.f0c9bec5.js"><link rel="prefetch" href="/assets/js/36.98932273.js"><link rel="prefetch" href="/assets/js/37.860797a2.js"><link rel="prefetch" href="/assets/js/38.6f4561e1.js"><link rel="prefetch" href="/assets/js/39.10ce31b7.js"><link rel="prefetch" href="/assets/js/4.2ba9c902.js"><link rel="prefetch" href="/assets/js/40.cafaf7d3.js"><link rel="prefetch" href="/assets/js/42.9554ca17.js"><link rel="prefetch" href="/assets/js/43.f87a0146.js"><link rel="prefetch" href="/assets/js/44.f9edddfd.js"><link rel="prefetch" href="/assets/js/45.5e9f1b92.js"><link rel="prefetch" href="/assets/js/46.4413c75d.js"><link rel="prefetch" href="/assets/js/47.033210e5.js"><link rel="prefetch" href="/assets/js/48.0658705c.js"><link rel="prefetch" href="/assets/js/49.e6d43c83.js"><link rel="prefetch" href="/assets/js/5.6eeb5680.js"><link rel="prefetch" href="/assets/js/50.71a2629e.js"><link rel="prefetch" href="/assets/js/51.8037a8d4.js"><link rel="prefetch" href="/assets/js/52.9708c5a4.js"><link rel="prefetch" href="/assets/js/53.327c6dca.js"><link rel="prefetch" href="/assets/js/54.9acf032b.js"><link rel="prefetch" href="/assets/js/55.92ea8b23.js"><link rel="prefetch" href="/assets/js/56.0b3ddf98.js"><link rel="prefetch" href="/assets/js/57.094406a5.js"><link rel="prefetch" href="/assets/js/58.90056c95.js"><link rel="prefetch" href="/assets/js/59.7ef391b7.js"><link rel="prefetch" href="/assets/js/6.621a2e88.js"><link rel="prefetch" href="/assets/js/60.2d221f87.js"><link rel="prefetch" href="/assets/js/7.9126399c.js"><link rel="prefetch" href="/assets/js/8.60d3af4d.js"><link rel="prefetch" href="/assets/js/9.f1843bd4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a509abab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Tech notes</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Dashboard
+</a></div><div class="nav-item"><a href="/about.html" class="nav-link">
+  About
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Dashboard
+</a></div><div class="nav-item"><a href="/about.html" class="nav-link">
+  About
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/_posts/avoid-use-else.html" class="sidebar-link">Avoid Using 'else'</a></li><li><a href="/_posts/learnt-concepts.html" class="sidebar-link">Learnt Concepts</a></li><li><a href="/_posts/css-bem.html" class="sidebar-link">BEM (CSS)</a></li><li><a href="/_posts/bff.html" class="sidebar-link">BFF (Backend For Frontend)</a></li><li><a href="/_posts/css-tips.html" class="sidebar-link">CSS Tips (General)</a></li><li><a href="/_posts/debug-101.html" class="sidebar-link">Debug Tips (General)</a></li><li><a href="/_posts/docker-damon.html" class="sidebar-link">Docker (Damon)</a></li><li><a href="/_posts/git-tips.html" class="sidebar-link">Git Tips</a></li><li><a href="/_posts/js-arrow-function.html" class="sidebar-link">JavaScript: Arrow Function</a></li><li><a href="/_posts/js-callback-promise-async-await.html" class="sidebar-link">JavaScript: Callback - Promise - Async Await</a></li><li><a href="/_posts/js-class-prototype.html" class="sidebar-link">JavaScript: Class - Prototype</a></li><li><a href="/_posts/js-closure.html" class="sidebar-link">JavaScript: Closure</a></li><li><a href="/_posts/js-pieces.html" class="sidebar-link">JavaScript: Code Pieces</a></li><li><a href="/_posts/js-event-loop.html" class="sidebar-link">JavaScript: Event Loop</a></li><li><a href="/_posts/js-common-note.html" class="sidebar-link">JavaScript: Common note</a></li><li><a href="/_posts/js-high-order-functions.html" class="sidebar-link">JavaScript: High Order Functions</a></li><li><a href="/_posts/js-hoisting.html" class="sidebar-link">JavaScript: Hoisting</a></li><li><a href="/_posts/js-patterns.html" class="sidebar-link">JavaScript: Common Patterns</a></li><li><a href="/_posts/js-immutability.html" class="sidebar-link">JavaScript: Immutability</a></li><li><a href="/_posts/ts-basics.html" class="sidebar-link">TypeScript: Basics (101)</a></li><li><a href="/_posts/sql-tips.html" class="sidebar-link">SQL (101)</a></li><li><a href="/_posts/node-tips.html" class="sidebar-link">NodeJS (101)</a></li><li><a href="/_posts/js-module-systems.html" class="sidebar-link">JavaScript Module Systems</a></li><li><a href="/_posts/js-reduce-method.html" class="sidebar-link">JavaScript Reduce Method (Use cases)</a></li><li><a href="/_posts/just-code.html" class="sidebar-link">Code Practices (Mostly JavaScript)</a></li><li><a href="/_posts/npms.html" class="sidebar-link">Npm packages (Common)</a></li><li><a href="/_posts/one-word-tips.html" class="sidebar-link">One word (Quick memo)</a></li><li><a href="/_posts/postgres-tips.html" class="sidebar-link">PostgreSQL Note</a></li><li><a href="/_posts/problems-resolved.html" class="sidebar-link">Problems Resolved (Records)</a></li><li><a href="/_posts/react-hoc.html" class="sidebar-link">React: High Order Component</a></li><li><a href="/_posts/react-hooks.html" class="sidebar-link">React: Hooks</a></li><li><a href="/_posts/react-lifecycles.html" class="sidebar-link">React: Lifecycle Methods</a></li><li><a href="/_posts/redux-tips.html" aria-current="page" class="active sidebar-link">React: Redux 101</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/_posts/restful-api.html" class="sidebar-link">Restful API</a></li><li><a href="/_posts/rxjs-trials.html" class="sidebar-link">RXJS Trials</a></li><li><a href="/_posts/react-ssr.html" class="sidebar-link">React: Server Side Rendering</a></li><li><a href="/_posts/solid-principles.html" class="sidebar-link">Software Development: Solid Principles</a></li><li><a href="/_posts/tips-to-read.html" class="sidebar-link">Tips to read before too late</a></li><li><a href="/_posts/tricky-codes.html" class="sidebar-link">Tricky code</a></li><li><a href="/_posts/ts-101.html" class="sidebar-link">TypeScript 101</a></li><li><a href="/_posts/underscore-js.html" class="sidebar-link">UnderscoreJS 101</a></li><li><a href="/_posts/unit-tests-tips.html" class="sidebar-link">Unit Tests 101</a></li><li><a href="/_posts/vue-tips.html" class="sidebar-link">VueJS 101</a></li><li><a href="/_posts/vuex-101.html" class="sidebar-link">VueX 101</a></li><li><a href="/_posts/web-accessibility.html" class="sidebar-link">Web Accessibility 101</a></li><li><a href="/_posts/webpack-101.html" class="sidebar-link">Webpack 101</a></li><li><a href="/_posts/weekly-tips.html" class="sidebar-link">Weekly tips</a></li><li><a href="/_posts/whats-the-output.html" class="sidebar-link">What is the output</a></li><li><a href="/_posts/web3.html" class="sidebar-link">Web3</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="redux-recalls"><a href="#redux-recalls" class="header-anchor">#</a> Redux recalls</h3> <h4 id="understand-redux-store-learnt-from-dan"><a href="#understand-redux-store-learnt-from-dan" class="header-anchor">#</a> Understand redux store (learnt from Dan)</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// mock a redux store</span>
+<span class="token keyword">const</span> <span class="token function-variable function">mockReduxStore</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">reducer</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> state <span class="token operator">=</span> <span class="token punctuation">{</span> counters<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> listeners <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> <span class="token function-variable function">getState</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">;</span> <span class="token comment">// return current latest states</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">dispatch</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">action</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    state<span class="token punctuation">.</span>counters <span class="token operator">=</span> <span class="token function">reducer</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>counters<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// dispatch send new data to reducer function</span>
+    listeners<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">listener</span> <span class="token operator">=&gt;</span> <span class="token function">listener</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// when states updated, we need to notify every listener we have new state updated !!!!, so we call each of listener and tell them a new state updated result !!</span>
+    <span class="token comment">// console.log('counters value? ', state.counters);</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> <span class="token function-variable function">subscribe</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">listener</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    listeners<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>listener<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// add new listener into listeners array</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      listeners <span class="token operator">=</span> listeners<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">l</span> <span class="token operator">=&gt;</span> l <span class="token operator">!==</span> listener<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// remove listener to current listeners array (also called: unsubscribe listener)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// listeners are used to tracking changes, when changes are requested by dispatch function, list</span>
+
+  <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// we want to make initial state populated !!!!</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">{</span> getState<span class="token punctuation">,</span> dispatch<span class="token punctuation">,</span> subscribe <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> store <span class="token operator">=</span> <span class="token function">mockReduxStore</span><span class="token punctuation">(</span>counterReducer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> store<span class="token punctuation">;</span>
+<span class="token comment">// reference: https://egghead.io/lessons/react-redux-store-methods-getstate-dispatch-and-subscribe</span>
+</code></pre></div><h4 id="for-simple-redux-flow-recall"><a href="#for-simple-redux-flow-recall" class="header-anchor">#</a> For simple Redux flow recall</h4> <p>Please check codebase <a href="https://github.com/DamengRandom/react-redux-typescipt">react-redux-typescipt</a> ~~ (For year 2021)</p> <h4 id="how-to-implement-redux-saga-basic-workflow-for-recall-only"><a href="#how-to-implement-redux-saga-basic-workflow-for-recall-only" class="header-anchor">#</a> How to implement Redux Saga (Basic workflow for recall only !!)</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Step 1: create store and connect to the app</span>
+<span class="token comment">// middleware initial</span>
+<span class="token keyword">const</span> sagaMiddleware <span class="token operator">=</span> <span class="token function">createSagaMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// store</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">compose</span><span class="token punctuation">(</span>
+  <span class="token function">applyMiddleware</span><span class="token punctuation">(</span>sagaMiddleware<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  window<span class="token punctuation">.</span>devToolsExtension <span class="token operator">&amp;&amp;</span> window<span class="token punctuation">.</span><span class="token function">devToolsExtension</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">(</span>createStore<span class="token punctuation">)</span><span class="token punctuation">(</span>rootReducer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// run sagas</span>
+sagaMiddleware<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>rootSaga<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Step 2: Write Saga functions (API caller + Saga caller)</span>
+<span class="token keyword">function</span> <span class="token function">getUsersAPICall</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">fetch</span><span class="token punctuation">(</span>apiUrl<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    method<span class="token operator">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span>
+    headers<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'application/json'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">throw</span> err <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">fetchUsers</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> users <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token function">call</span><span class="token punctuation">(</span>getUsersAPICall<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">yield</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token constant">GET_USERS_SUCCESS</span><span class="token punctuation">,</span> users <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">yield</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token constant">GET_USERS_FAILED</span><span class="token punctuation">,</span> message<span class="token operator">:</span> error<span class="token punctuation">.</span>message <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">usersSaga</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">yield</span> <span class="token function">takeEvery</span><span class="token punctuation">(</span><span class="token constant">GET_USERS_REQUESTED</span><span class="token punctuation">,</span> fetchUsers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Step 3: write reducer function</span>
+<span class="token keyword">const</span> initialState <span class="token operator">=</span> <span class="token punctuation">{</span>
+  users<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  loading<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  error<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">users</span><span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token constant">GET_USERS_REQUESTED</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token operator">...</span>state<span class="token punctuation">,</span>
+        loading<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token constant">GET_USERS_FAILED</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token operator">...</span>state<span class="token punctuation">,</span>
+        loading<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        error<span class="token operator">:</span> action<span class="token punctuation">.</span>message
+      <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> <span class="token constant">GET_USERS_SUCCESS</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token operator">...</span>state<span class="token punctuation">,</span>
+        loading<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        users<span class="token operator">:</span> action<span class="token punctuation">.</span>users
+      <span class="token punctuation">}</span>
+    <span class="token keyword">default</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Step 4: write action function</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getUsersAction</span><span class="token punctuation">(</span><span class="token parameter">users</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    type<span class="token operator">:</span> <span class="token constant">GET_USERS_REQUESTED</span><span class="token punctuation">,</span>
+    payload<span class="token operator">:</span> users<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Step 5: Implement for UI component</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> dispatch <span class="token operator">=</span> <span class="token function">useDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> users <span class="token operator">=</span> <span class="token function">useSelector</span><span class="token punctuation">(</span><span class="token parameter">state</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>users<span class="token punctuation">.</span>users<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> loading <span class="token operator">=</span> <span class="token function">useSelector</span><span class="token punctuation">(</span><span class="token parameter">state</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>users<span class="token punctuation">.</span>loading<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> error <span class="token operator">=</span> <span class="token function">useSelector</span><span class="token punctuation">(</span><span class="token parameter">state</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>users<span class="token punctuation">.</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">getUsersAction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span>loading <span class="token operator">&amp;&amp;</span> <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Loading <span class="token operator">...</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span><span class="token punctuation">}</span>
+      <span class="token punctuation">{</span>error <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>loading <span class="token operator">&amp;&amp;</span> <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token punctuation">{</span>error<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span><span class="token punctuation">}</span>
+      <span class="token punctuation">{</span>users <span class="token operator">&amp;&amp;</span> users<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>loading <span class="token operator">&amp;&amp;</span> users<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>
+        <span class="token punctuation">(</span><span class="token parameter">user<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token operator">&lt;</span>Card key<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">user-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>index<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span> user<span class="token operator">=</span><span class="token punctuation">{</span>user<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+      <span class="token punctuation">{</span>users <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>loading <span class="token operator">&amp;&amp;</span> users<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>No users yet <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// For the complete code details, please check codebase: &quot;redux-redux-saga-recall-2021&quot;</span>
+</code></pre></div><h4 id="redux-thunk-workflow-example"><a href="#redux-thunk-workflow-example" class="header-anchor">#</a> Redux-Thunk workflow example</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// store setup</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>
+  <span class="token function">combineReducers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    rates<span class="token operator">:</span> ratesReducer<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function">applyMiddleware</span><span class="token punctuation">(</span>thunk<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// reducers</span>
+
+<span class="token keyword">const</span> initialState <span class="token operator">=</span> <span class="token punctuation">{</span>
+  amount<span class="token operator">:</span> <span class="token string">'10'</span><span class="token punctuation">,</span>
+  currencyCode<span class="token operator">:</span> <span class="token string">'USD'</span><span class="token punctuation">,</span>
+  currencyData<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token constant">USD</span><span class="token operator">:</span> <span class="token number">1.0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">ratesReducer</span><span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token constant">RATES_AMOUNT_CHANGED</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token operator">...</span>state<span class="token punctuation">,</span> amount<span class="token operator">:</span> action<span class="token punctuation">.</span>payload<span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token constant">RATES_CURRENCY_CHANGED</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token operator">...</span>state<span class="token punctuation">,</span> currencyCode<span class="token operator">:</span> action<span class="token punctuation">.</span>payload<span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token constant">RATES_RECEIVED</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token operator">...</span>state<span class="token punctuation">,</span> currencyData<span class="token operator">:</span> action<span class="token punctuation">.</span>payload<span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">default</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// selector functions (access redux state easily)</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getAmount</span> <span class="token operator">=</span> <span class="token parameter">state</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>rates<span class="token punctuation">.</span>amount<span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getCurrencyCode</span> <span class="token operator">=</span> <span class="token parameter">state</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>rates<span class="token punctuation">.</span>currencyCode<span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getCurrencyData</span> <span class="token operator">=</span> <span class="token parameter">state</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>rates<span class="token punctuation">.</span>currencyData<span class="token punctuation">;</span>
+
+<span class="token comment">// actions</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">changeCurrencyCode</span><span class="token punctuation">(</span><span class="token parameter">currencyCode</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">changeCurrencyCodeThunk</span><span class="token punctuation">(</span><span class="token parameter">dispatch</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      type<span class="token operator">:</span> <span class="token constant">RATES_CURRENCY_CHANGED</span><span class="token punctuation">,</span>
+      payload<span class="token operator">:</span> currencyCode
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// thunk action creator</span>
+
+    <span class="token function">getExchangeRates</span><span class="token punctuation">(</span>currencyCode<span class="token punctuation">,</span> supportedCurrencies<span class="token punctuation">)</span> <span class="token comment">// api call</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">rates</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token comment">// then action creator get payload</span>
+          type<span class="token operator">:</span> <span class="token constant">RATES_RECEIVED</span><span class="token punctuation">,</span>
+          payload<span class="token operator">:</span> rates
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// thunks</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getInitialRates</span><span class="token punctuation">(</span><span class="token parameter">dispatch<span class="token punctuation">,</span> getState</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> currencyCode <span class="token operator">=</span> <span class="token function">getCurrencyCode</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">changeCurrencyCode</span><span class="token punctuation">(</span>currencyCode<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// fetch currency data before component get loaded ..</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="redux-toolkit"><a href="#redux-toolkit" class="header-anchor">#</a> Redux-toolkit</h4> <p>This is currently the modern way of manage the react states, features I discovered so far,</p> <ul><li>Seems like actions and reducers are in the <strong>SAME</strong> file</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> createSlice<span class="token punctuation">,</span> PayloadAction <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@reduxjs/toolkit'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">CounterState</span> <span class="token punctuation">{</span>
+  value<span class="token operator">:</span> number
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> initialState<span class="token operator">:</span> CounterState <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> counterSlice <span class="token operator">=</span> <span class="token function">createSlice</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'counter'</span><span class="token punctuation">,</span>
+  initialState<span class="token punctuation">,</span>
+  reducers<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">increment</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">state</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Redux Toolkit allows us to write &quot;mutating&quot; logic in reducers. It</span>
+      <span class="token comment">// doesn't actually mutate the state because it uses the Immer library,</span>
+      <span class="token comment">// which detects changes to a &quot;draft state&quot; and produces a brand new</span>
+      <span class="token comment">// immutable state based off those changes</span>
+      state<span class="token punctuation">.</span>value <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">decrement</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">state</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      state<span class="token punctuation">.</span>value <span class="token operator">-=</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">incrementByAmount</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> action<span class="token operator">:</span> PayloadAction<span class="token operator">&lt;</span>number<span class="token operator">&gt;</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      state<span class="token punctuation">.</span>value <span class="token operator">+=</span> action<span class="token punctuation">.</span>payload
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Action creators are generated for each case reducer function</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> increment<span class="token punctuation">,</span> decrement<span class="token punctuation">,</span> incrementByAmount <span class="token punctuation">}</span> <span class="token operator">=</span> counterSlice<span class="token punctuation">.</span>actions
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> counterSlice<span class="token punctuation">.</span>reducer
+</code></pre></div><ul><li>all in one line</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> configureStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@reduxjs/toolkit'</span><span class="token punctuation">;</span>
+<span class="token comment">// automatically imported redux-devtools-extension</span>
+<span class="token comment">// automatically imported redux thunk middleware</span>
+</code></pre></div><ul><li>RTK query: Elegant way to handle async fetch calls</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// For functional file:</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createApi<span class="token punctuation">,</span> fetchBaseQuery <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@reduxjs/toolkit/query/react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Pokemon <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./types'</span>
+
+<span class="token comment">// Define a service using a base URL and expected endpoints</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> pokemonApi <span class="token operator">=</span> <span class="token function">createApi</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  reducerPath<span class="token operator">:</span> <span class="token string">'pokemonApi'</span><span class="token punctuation">,</span>
+  baseQuery<span class="token operator">:</span> <span class="token function">fetchBaseQuery</span><span class="token punctuation">(</span><span class="token punctuation">{</span> baseUrl<span class="token operator">:</span> <span class="token string">'https://pokeapi.co/api/v2/'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">endpoints</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">builder</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    getPokemonByName<span class="token operator">:</span> builder<span class="token punctuation">.</span>query<span class="token operator">&lt;</span>Pokemon<span class="token punctuation">,</span> string<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token function-variable function">query</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">pokemon/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Export hooks for usage in functional components, which are</span>
+<span class="token comment">// auto-generated based on the defined endpoints</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> useGetPokemonByNameQuery <span class="token punctuation">}</span> <span class="token operator">=</span> pokemonApi
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// For store:</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> configureStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@reduxjs/toolkit'</span>
+<span class="token comment">// Or from '@reduxjs/toolkit/query/react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> setupListeners <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@reduxjs/toolkit/query'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> pokemonApi <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./services/pokemon'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">configureStore</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  reducer<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Add the generated reducer as a specific top-level slice</span>
+    <span class="token punctuation">[</span>pokemonApi<span class="token punctuation">.</span>reducerPath<span class="token punctuation">]</span><span class="token operator">:</span> pokemonApi<span class="token punctuation">.</span>reducer<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// Adding the api middleware enables caching, invalidation, polling,</span>
+  <span class="token comment">// and other useful features of `rtk-query`.</span>
+  <span class="token function-variable function">middleware</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">getDefaultMiddleware</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+    <span class="token function">getDefaultMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>pokemonApi<span class="token punctuation">.</span>middleware<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// optional, but required for refetchOnFocus/refetchOnReconnect behaviors</span>
+<span class="token comment">// see `setupListeners` docs - takes an optional callback as the 2nd arg for customization</span>
+<span class="token function">setupListeners</span><span class="token punctuation">(</span>store<span class="token punctuation">.</span>dispatch<span class="token punctuation">)</span>
+</code></pre></div><h3 id="why-we-need-to-use-selector-functions-for-redux-state"><a href="#why-we-need-to-use-selector-functions-for-redux-state" class="header-anchor">#</a> Why we need to use <code>selector functions</code> for Redux state?</h3> <p>Keep your store state <code>minimal</code> and derived data from the state <code>needed</code>, pick the needed state for component</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">mainState</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token operator">:</span> State</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">;</span>
+<span class="token keyword">const</span> selectedState <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>mainState<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">state</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>specificProp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/_posts/react-lifecycles.html" class="prev">
+        React: Lifecycle Methods
+      </a></span> <span class="next"><a href="/_posts/restful-api.html">
+        Restful API
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.585e8377.js" defer></script><script src="/assets/js/2.a511a718.js" defer></script><script src="/assets/js/41.29fae567.js" defer></script>
+  </body>
+</html>

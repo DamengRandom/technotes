@@ -1,0 +1,18 @@
+{
+  "name": "technotes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs --no-cache --port 5152",
+    "build": "vuepress build docs"
+  },
+  "keywords": ["Vssue", "Damengrandom", "damengrandom", "DamengRandom", "Dameng", "Damon", "Damon Wu", "DAMON", "DAMON WU", "Tipify", "TIPIFY", "Notes", "Technotes", "technotes", "HarleyCorgi", "notes", "tech", "tech notes"],
+  "author": "HarleyCorgi",
+  "license": "ISC",
+  "dependencies": {
+    "@vssue/api-github-v3": "^1.1.2",
+    "@vssue/vuepress-plugin-vssue": "^1.2.0",
+    "vuepress": "^1.2.0"
+  }
+}
