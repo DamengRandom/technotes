@@ -59,3 +59,10 @@ This function above is easily to avoid repeat writing the same logic inside one 
 `storage` is like point to the original data (same location)
 `memory` is copying the original data to a place called memory (different/new location)
 <br/>
+
+
+<b>5.</b> `mappings` in solidity solves iteration lower efficiency issue, `mapping` is designed for single value (key -> value) lookup !!!
+<br/>
+
+
+<b>6.</b>
