@@ -849,3 +849,15 @@ let getElement = arrayFn(); // Array is created only once
 getElement(99);
 getElement(70);  
 ```
+
+
+<b>36.</b> How to open devtools in Electron app
+
+```js
+targetWindow?.webContents?.openDevTools?.({ mode: 'right' });
+```
+
+<a href="https://www.electronjs.org/docs/latest/api/web-contents#contentsopendevtoolsoptions" target="_blank">Reference</a>
+
+
+<b>37.</b>
