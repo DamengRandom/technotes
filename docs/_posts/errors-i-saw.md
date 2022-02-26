@@ -110,7 +110,7 @@ jest.mock('react', () => ({
 <a href="https://stackoverflow.com/questions/62360926/invalid-hook-call-when-mocking-react-hoc-with-jest" target="_blank">Reference</a>
 
 
-5). Common typescript error: npm package error 
+5). Common typescript error: `npm package error` 
 
 In typescript, when you install package and shown some error "Try `npm install @types/package-name`“
 
