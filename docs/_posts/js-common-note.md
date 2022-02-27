@@ -632,3 +632,13 @@ function reverseBySeparator(string, separator) {
   return string.split(separator).reverse().join(separator);
 }
 ```
+
+
+<b>22.</b> WebSocket (its a real-time communication technology):
+
+Data is transferred as buffer format, and need to be converted/parsed as plain text at the end
+
+Framework: socket.io (another version of web socket), just a tool !!
+
+
+<b>23.</b>
