@@ -641,4 +641,9 @@ Data is transferred as buffer format, and need to be converted/parsed as plain t
 Framework: socket.io (another version of web socket), just a tool !!
 
 
-<b>23.</b>
+<b>23.</b> `Socket.io` has so many built in functionalities (eg: fallback) which can be directly used, and better for larger scale project
+Web Socket is suitable for small projects, some functionalities you need to write it on your own to achieve your goal.
+
+Message bus system (simple queue system): can be defined as Socket.IO
+
+`Socket.io` has a room/grouping concept, you can send messages to a specific bunch of people ..
