@@ -274,7 +274,7 @@ CD (Continuous Development): Release code out
 <b>32.</b> What is arrow function? A shorter syntax for defining a javascript function
 
 
-<b>33.</b> What does http.createServer do? The http.createServer() method turns your computer into an HTTP server.
+<b>33.</b> What does `http.createServer` do? The `http.createServer()` method turns your computer into an HTTP server.
 
 
 <b>34.</b>

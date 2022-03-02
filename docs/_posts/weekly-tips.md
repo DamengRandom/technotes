@@ -860,4 +860,21 @@ targetWindow?.webContents?.openDevTools?.({ mode: 'right' });
 <a href="https://www.electronjs.org/docs/latest/api/web-contents#contentsopendevtoolsoptions" target="_blank">Reference</a>
 
 
-<b>37.</b>
+<b>37.</b> Test Http2 API request locally, we have to generate the secrets in order to satisfy the SSH connections, how to do it?
+
+MAC OS:
+
+```bash
+brew install openssl
+openssl req -new -newkey rsa:2048 -new -nodes -keyout key.pem -out csr.pem
+openssl x509 -req -days 365 -in csr.pem -signkey key.pem -out server.crt
+```
+
+* Make sure you have done the 2nd and 3rd command under your target folder !!!
+
+
+For HTTP2 connections on browsers, eg: if you save a data record in one tab, another opened tab will get synchronous as well, both of them will show a new saved record !!! This is powerful of using HTTP2
+
+HTTP transfers the data in stream format, json is not good at being a stream, so we have to convert the content-type to text/plain, which is easier to be formatted to stream format !!
+
+HTTP2 is also a real-time, but one direction, only happened during request 
