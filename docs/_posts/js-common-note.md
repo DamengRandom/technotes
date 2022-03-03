@@ -647,3 +647,21 @@ Web Socket is suitable for small projects, some functionalities you need to writ
 Message bus system (simple queue system): can be defined as Socket.IO
 
 `Socket.io` has a room/grouping concept, you can send messages to a specific bunch of people ..
+
+
+<b>24.</b> JavaScript `Map` vs `object`
+
+```js
+// -- create a map and an object
+
+const { setEnvironmentData } = require("worker_threads");
+
+const map = new Map([[1, "one"], [2, "two"]]);
+const object = {1: "one", 2: "two"};
+
+console.info('Output 🌶🌶🌶🌶: ', map, object, map === object);
+// Output 🤖🤖🤖🤖:  Map(2) { 1 => 'one', 2 => 'two' } { '1': 'one', '2': 'two' } false
+```
+
+
+<b>25.</b>
