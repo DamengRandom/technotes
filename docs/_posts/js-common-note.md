@@ -661,6 +661,13 @@ const object = {1: "one", 2: "two"};
 
 console.info('Output 🌶🌶🌶🌶: ', map, object, map === object);
 // Output 🤖🤖🤖🤖:  Map(2) { 1 => 'one', 2 => 'two' } { '1': 'one', '2': 'two' } false
+
+// -- set a value to map and object
+
+map.set(3, "three");
+object[3] = "three";
+
+console.info('Output after set 🍒🍒🍒🍒: ', map, object);
 ```
 
 
