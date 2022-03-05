@@ -668,6 +668,10 @@ map.set(3, "three");
 object[3] = "three";
 
 console.info('Output after set 🍒🍒🍒🍒: ', map, object);
+
+// -- get a value from map and object
+
+console.log('Output after get : 🥝🥝🥝🥝', map.get(3), object[3]);
 ```
 
 
