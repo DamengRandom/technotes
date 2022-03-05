@@ -672,6 +672,13 @@ console.info('Output after set 🍒🍒🍒🍒: ', map, object);
 // -- get a value from map and object
 
 console.log('Output after get : 🥝🥝🥝🥝', map.get(3), object[3]);
+
+// -- delete a value from map and object
+
+map.delete(3);
+delete object[3];
+
+console.log('Output after delete : 🥭🥭🥭🥭', map, object);
 ```
 
 
