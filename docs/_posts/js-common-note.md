@@ -679,6 +679,10 @@ map.delete(3);
 delete object[3];
 
 console.log('Output after delete : 🥭🥭🥭🥭', map, object);
+
+// map, object -> keys
+
+console.log('Output for map & object keys 🌽🌽🌽🌽', map.keys(), Object.keys(object));
 ```
 
 
