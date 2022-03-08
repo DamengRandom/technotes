@@ -683,6 +683,10 @@ console.log('Output after delete : 🥭🥭🥭🥭', map, object);
 // map, object -> keys
 
 console.log('Output for map & object keys 🌽🌽🌽🌽', map.keys(), Object.keys(object));
+
+// map, object -> has
+
+console.log('Output for map & object has 🫐🫐🫐🫐', map.has(2), 2 in object, object.hasOwnProperty(2));
 ```
 
 
