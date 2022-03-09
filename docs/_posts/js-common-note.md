@@ -687,6 +687,10 @@ console.log('Output for map & object keys 🌽🌽🌽🌽', map.keys(), Object.
 // map, object -> has
 
 console.log('Output for map & object has 🫐🫐🫐🫐', map.has(2), 2 in object, object.hasOwnProperty(2));
+
+// map, object -> entries
+
+console.log('Output for map & object entries 🍎🍎🍎🍎', map.entries(), Object.entries(object));
 ```
 
 
