@@ -691,6 +691,10 @@ console.log('Output for map & object has 🫐🫐🫐🫐', map.has(2), 2 in obj
 // map, object -> entries
 
 console.log('Output for map & object entries 🍎🍎🍎🍎', map.entries(), Object.entries(object));
+
+// map, object -> length
+
+console.log('Output for map & object length 🥦🥦🥦🥦', map.size, Object.keys(object).length);
 ```
 
 
