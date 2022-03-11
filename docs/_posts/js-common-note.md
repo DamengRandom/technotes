@@ -695,6 +695,21 @@ console.log('Output for map & object entries 🍎🍎🍎🍎', map.entries(), O
 // map, object -> length
 
 console.log('Output for map & object length 🥦🥦🥦🥦', map.size, Object.keys(object).length);
+
+// map & object iterations
+
+// for (entry of map) {
+//   console.log('Iteration output for map 🥬🥬🥬🥬', entry);
+// }
+
+for ([key, value] of map) {
+  console.log('Iteration output for map 🥬🥬🥬🥬', { key, value });
+}
+
+for ([key, value] of Object.entries(object)) {
+  console.log('Iteration output for object 🥕🥕🥕🥕', { key, value });
+}
+
 ```
 
 
