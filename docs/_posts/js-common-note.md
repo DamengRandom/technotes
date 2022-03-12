@@ -106,7 +106,7 @@ var numberObject = {
   value: 100,
 };
 
-var outputValue = function () {
+var outputValue = function() {
   console.log(this.value);
   return this.value;
 };
@@ -127,7 +127,7 @@ Example:
 ```js
 // we call name attribute from another object
 var guy = {
-  name: function () {
+  name: function() {
     return "name: " + this.guyName;
   },
 };
@@ -220,7 +220,7 @@ obj.toString(); // "[object Object]"
 
 // normally this dunder proto can be used for inheritance
 var obj = {};
-obj.toString = function () {
+obj.toString = function() {
   return true;
 };
 var out = Object.create(obj);
@@ -316,7 +316,7 @@ let globalScope = "hello ";
 
 function parent() {
   let functionScope = "I am ";
-  return function () {
+  return function() {
     let localVariable = "Ella";
     return `${globalScope}${functionScope}${localVariable}`;
   };
@@ -444,7 +444,7 @@ let obj2 = {
   name: "damon",
 };
 
-obj2.word = function () {
+obj2.word = function() {
   console.log(`Aloha, ${this.name} ..`);
 };
 
@@ -597,7 +597,10 @@ var reverseEntireSentence = reverseBySeparator(string, "");
 var reverseEachWord = reverseBySeparator(reverseEntireSentence, " ");
 
 function reverseBySeparator(string, separator) {
-  return string.split(separator).reverse().join(separator);
+  return string
+    .split(separator)
+    .reverse()
+    .join(separator);
 }
 ```
 
