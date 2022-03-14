@@ -708,6 +708,33 @@ map.forEach((value, key) =>
 Object.entries(object).forEach(([key, value]) =>
   console.log("Foreach output for object 🥒🥒🥒🥒", { key, value })
 );
+
+// map & object swap key & values
+
+// console.log('swap map result 🍓🍓🍓🍓: ', Array.from(map).reduce((acc, [key, value]) => {
+//   acc.set(value, key);
+
+//   return acc;
+// }, new Map()));
+
+console.log(
+  "swap map result 🍓🍓🍓🍓: ",
+  Array.from(map).reduce((acc, [key, value]) => acc.set(value, key), new Map())
+);
+
+// console.log('swap object result 🍅🍅🍅🍅: ', Object.entries(object).reduce((acc, [key, value]) => {
+//   acc[value] = key;
+
+//   return acc;
+// }, {}));
+
+console.log(
+  "swap object result 🍅🍅🍅🍅: ",
+  Object.entries(object).reduce(
+    (acc, [key, value]) => ({ ...acc, [value]: key }),
+    {}
+  )
+);
 ```
 
 <b>25.</b>
