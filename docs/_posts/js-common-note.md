@@ -735,6 +735,11 @@ console.log(
     {}
   )
 );
+
+// Resource: https://dmitripavlutin.com/maps-vs-plain-objects-javascript/
+
+// Normally, map is accepts key types, and will keep key types
+// For normal JS object, the if the key is not a string typed value, the key will be converted to string automatically !!
 ```
 
 <b>25.</b>
