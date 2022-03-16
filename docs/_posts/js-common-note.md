@@ -752,7 +752,7 @@ console.log(
 
 // When we need to get the value of 'object 2 data', how? Have to loop the array, which O(2) complexity is higher than using `Map()`
 
-// if using Map(), we cna use WeakMap(), which is for preventing memory leak purpose
+// if using Map(), we can use WeakMap(), which is for preventing memory leak purpose
 
 // Like this:
 
@@ -771,6 +771,10 @@ console.log(
 // ```js
 // setOfValues.get(foo);
 // ```
+
+// Map is directly can be used for loop to do the iteration for its items,
+// but if we want to do it for JS object, we have to use Object.entries(object) convert to array first then do the items iteration
+// not that straight compared with Map for loop ...
 ````
 
 <b>25.</b>
