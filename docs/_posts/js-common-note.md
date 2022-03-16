@@ -619,7 +619,7 @@ Message bus system (simple queue system): can be defined as Socket.IO
 
 <b>24.</b> JavaScript `Map` vs `object`
 
-```js
+````js
 // -- create a map and an object
 
 const { setEnvironmentData } = require("worker_threads");
@@ -740,6 +740,37 @@ console.log(
 
 // Normally, map is accepts key types, and will keep key types
 // For normal JS object, the if the key is not a string typed value, the key will be converted to string automatically !!
-```
+
+// If the data structure is like this:
+
+// ```js
+// const obj1 = {key1 : 'value'};
+// const obj2 = {key2 : 'value'};
+
+// const setOfValues = [[ obj1, 'object 1 data' ], [ obj2, 'object 2 data' ]];
+// ```
+
+// When we need to get the value of 'object 2 data', how? Have to loop the array, which O(2) complexity is higher than using `Map()`
+
+// if using Map(), we cna use WeakMap(), which is for preventing memory leak purpose
+
+// Like this:
+
+// ```js
+// const obj1 = {key1 : 'value'};
+// const obj2 = {key2 : 'value'};
+
+// const setOfValues = new WeakMap();
+
+// setOfValues.set(obj1, 'object 1 data');
+// setOfValues.set(obj2, 'object 2 data');
+// ```
+
+// Then we can simply get 'object 1 data' like this:
+
+// ```js
+// setOfValues.get(foo);
+// ```
+````
 
 <b>25.</b>
