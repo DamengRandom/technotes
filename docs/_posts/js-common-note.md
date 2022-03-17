@@ -775,6 +775,36 @@ console.log(
 // Map is directly can be used for loop to do the iteration for its items,
 // but if we want to do it for JS object, we have to use Object.entries(object) convert to array first then do the items iteration
 // not that straight compared with Map for loop ...
+
+// Another example
+
+// ```js
+// var cc = {
+
+//   toString: 'a string ..'
+// }
+
+// function isX(value) {
+
+//   return value.toString() === '[object, object]'
+// }
+
+// isX(cc)
+// // VM438:3 Uncaught TypeError: value.toString is not a function
+//   // at isX (<anonymous>:3:18)
+//   // at <anonymous>:1:1
+// // isX @ VM438:3
+// // (anonymous) @ VM469:1
+
+// var dd = new Map([['toString', 'gg']]);
+
+// dd
+// // Map(1) {'toString' => 'gg'}
+
+// isX(dd)
+// // false
+
+// // As you can setEnvironmentData, cc is returned an error, but dd which is Map and which returns a value, no error !!!
 ````
 
 <b>25.</b>
