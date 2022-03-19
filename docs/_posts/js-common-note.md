@@ -807,4 +807,31 @@ console.log(
 // // As you can setEnvironmentData, cc is returned an error, but dd which is Map and which returns a value, no error !!!
 ````
 
-<b>25.</b>
+<b>25.</b> Please Please remember: addEventListener and removeEventListener the method MUST MUST be the same one:
+
+```js
+// wrong way:
+
+window.addEventListener("click", () => {
+  console.log("do something");
+});
+
+window.removeEventListener("click", (event) => {
+  console.log("do something");
+
+  doSomethingExtra(event); // do something other actions
+});
+
+// Above way is totally wrong, because the method inside addEventListener and the method inside removeEventListener has 2 different memory address !!! (If you need to check in detail you can go to Chrome memory tab to find out in detail)
+
+// right way:
+
+const dosSomething = () => {
+  console.log(
+    "this is a shared method for addEventListener and removeEventListener"
+  );
+};
+
+window.addEventListener("click", dosSomething);
+window.removeEventListener("click", dosSomething);
+```
