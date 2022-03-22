@@ -37,4 +37,6 @@
 
 <b>18.</b> <a href="https://github.com/getify/Functional-Light-JS" target="_blank">Functional Programming in JavaScript</a>
 
-<b>19.</b> <a href="" target="_blank"></a>
+<b>19.</b> <a href="https://www.fullstack.cafe/interview-questions/javascript" target="_blank">Interview test short answers</a>
+
+<b>20.</b> <a href="" target="_blank"></a>
