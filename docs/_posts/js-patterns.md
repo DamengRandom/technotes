@@ -4,7 +4,6 @@ What is JavaScript pattern:
 
 Can be treated as a general solution for resolving your current faced issue, more like a template or re-usable solution for resolving abit more complex project structure issues .. (2021 understanding)
 
-
 1). JavaScript Singleton Pattern
 
 ```js
@@ -43,29 +42,28 @@ Object.freeze(messager); // keep logger object unchanged
 export default messager;
 
 // Please create new file: singleton-pattern-consumer-A
-import messager from './singleton-pattern-example';
+import messager from "./singleton-pattern-example";
 
 export default function singletonConsumerA() {
-  messager.show('Red book is helpful.');
+  messager.show("Red book is helpful.");
   messager.counter();
 }
 
 // Please create new file: singleton-pattern-consumer-B
-import messager from './singleton-pattern-example';
+import messager from "./singleton-pattern-example";
 
 export default function singletonConsumerB() {
-  messager.show('小红书不错。');
+  messager.show("小红书不错。");
   messager.counter();
 }
 
 // imports
-import A from './singleton-pattern-consumer-A';
-import B from './singleton-pattern-consumer-B';
+import A from "./singleton-pattern-consumer-A";
+import B from "./singleton-pattern-consumer-B";
 
 A();
 B();
 ```
-
 
 2). JavScript Factory Pattern
 
@@ -122,7 +120,6 @@ terminals.forEach((terminal) => {
 });
 ```
 
-
 3). JavaScript Constructor Pattern
 
 ```js
@@ -133,7 +130,7 @@ In JavaScript, 2 common ways to create an new object:
 
 ```js
 let newObject = {}; // way 1
-let newObject = new Object(); // way 2 
+let newObject = new Object(); // way 2
 ```
 
 In JavaScript, 4 ways to assign attribute into an object
@@ -141,27 +138,27 @@ In JavaScript, 4 ways to assign attribute into an object
 ```js
 // Dot Syntax
 let newObject;
-newObject.newProp = 'assigned newProp into object newObject';
+newObject.newProp = "assigned newProp into object newObject";
 
 // Square Bracket Syntax
 let newObject;
-newObject['key'] = 'value';
+newObject["key"] = "value";
 
 // Object.defineProperty
 let newObject = {};
-Object.defineProperty(newObject, 'newKey', {
-  value: 'new value'
+Object.defineProperty(newObject, "newKey", {
+  value: "new value",
 });
 
 // Object.defineProperties
 let newObject = {};
 Object.defineProperties(newObject, {
-  'key1': {
-    value: 'value 1'
+  key1: {
+    value: "value 1",
   },
-  'key2': {
-    value: 'value 2'
-  }
+  key2: {
+    value: "value 2",
+  },
 });
 ```
 
@@ -174,22 +171,21 @@ function Property(type, year, owner) {
   this.owner = owner;
 }
 
-Property.prototype.word = function () {
-  return `${this.owner} has own a year ${this.year} ${this.type}`;  
-}
+Property.prototype.word = function() {
+  return `${this.owner} has own a year ${this.year} ${this.type}`;
+};
 
-let exampleOne = new Property('apartment', '2018', 'MrX');
-let exampleTwo = new Property('house', '2008', 'MrsY');
+let exampleOne = new Property("apartment", "2018", "MrX");
+let exampleTwo = new Property("house", "2008", "MrsY");
 
 console.log(exampleOne.word());
 console.log(exampleTwo.word());
 ```
 
-
 4). JavaScript Module Pattern
 
 ```js
-// It is a common pattern which was used for wrapping a set of variables or objects in a single scope 
+// It is a common pattern which was used for wrapping a set of variables or objects in a single scope
 
 // The reason why we use module pattern:
 // 1). maintainability
@@ -197,19 +193,20 @@ console.log(exampleTwo.word());
 ```
 
 <!-- Typical Example of implementing Module pattern -->
+
 ```js
 function EmployeeDetails() {
-  var name = 'MrX';
+  var name = "MrX";
   var salary = 1000000;
 
   var totalSalary = function(bonus, expense = 0) {
     return salary + bonus + expense;
-  }
+  };
 
   return {
     name,
-    totalSalary
-  }
+    totalSalary,
+  };
 }
 
 var employeeDetails = new EmployeeDetails();
@@ -222,24 +219,51 @@ console.log(salary); // ReferenceError: salary is not defined
 // Also keep employee details in one module, can be re-used for other functionalities or other classes/modules later
 ```
 
-
 5). JavaScript Prototype Pattern
 
 ```js
 var greetings = {
-  word: 'Hello',
+  word: "Hello",
   phrase: function() {
     console.log("What's up");
   },
   sentence: function(name) {
     console.log(`Hi ${name}, how are you doing?`);
-  }
-}
+  },
+};
 
 const myGreetings = Object.create(greetings);
-console.log(myGreetings.sentence('MrRight'));
+console.log(myGreetings.sentence("MrRight"));
 ```
 
+Another example:
+
+```js
+const zombie = {
+  eatBrains() {
+    return "yum 🧠 ..";
+  },
+};
+
+const obj = Object.create(zombie, { name: { value: "object" } });
+
+// console.log(obj.eatBrains());
+// console.log(obj.__proto__.eatBrains());
+// console.log(obj.__proto__);
+
+console.log(Object.getPrototypeOf(obj)); // the modern practice
+
+// In JS: prototype refers to constructor
+Array.prototype.bad = function() {
+  console.log("prototype is a constructor ...");
+  console.log(
+    "which means we can extend a class with an additional function we want to !!!"
+  );
+};
+
+Array.prototype.bad(); // this is bad code in JS
+// better just define as a function !!
+```
 
 6). JavaScript Observer Pattern
 
@@ -261,32 +285,34 @@ class Observer {
   }
 
   broadcast(data) {
-    this.observers.forEach(subscriber => subscriber(data));
+    this.observers.forEach((subscriber) => subscriber(data));
   }
 }
 
-const getTextCountResult = text => text ? text.trim().split(/s+/).length : 0;
+const getTextCountResult = (text) =>
+  text ? text.trim().split(/s+/).length : 0;
 
-const wordCountDOM = document.createElement('p');
+const wordCountDOM = document.createElement("p");
 wordCountDOM.innerHTML = 'Word Count: <strong id="counterValue">0</strong>';
 document.body.appendChild(wordCountDOM);
 
 const inputObserver = new Observer();
 
 inputObserver.subscribe((text) => {
-  const counterValueDOM = document.getElementById('counterValue');
+  const counterValueDOM = document.getElementById("counterValue");
 
   counterValueDOM.textContent = getTextCountResult(text);
 });
 
-const inputDOM = document.getElementById('words');
+const inputDOM = document.getElementById("words");
 
-inputDOM.addEventListener('keyup', () => inputObserver.broadcast(inputDOM.value));
+inputDOM.addEventListener("keyup", () =>
+  inputObserver.broadcast(inputDOM.value)
+);
 
 // HTML part
-<textarea id="words" placeholder="Please type word here .."></textarea>
+<textarea id="words" placeholder="Please type word here .."></textarea>;
 ```
-
 
 7). Strategy pattern (Purpose: try to make code more reusable)
 
@@ -295,50 +321,51 @@ Example: try to make if statement more reusable
 ```js
 // before
 function getExperience(level, experience) {
-    const levelUpperCase = level.toUpperCase();
+  const levelUpperCase = level.toUpperCase();
 
-    if (levelUpperCase === 'S') {
-        return experience * 10;
-    }
+  if (levelUpperCase === "S") {
+    return experience * 10;
+  }
 
-    if (levelUpperCase === 'A') {
-        return experience * 5;
-    }
+  if (levelUpperCase === "A") {
+    return experience * 5;
+  }
 
-    if (levelUpperCase === 'B') {
-        return experience * 2
-    }
+  if (levelUpperCase === "B") {
+    return experience * 2;
+  }
 
-    return experience;
+  return experience;
 }
 
-getExperience('A', 10); // 50
+getExperience("A", 10); // 50
 ```
-
 
 ```js
 // after
 const strategy = {
-  'S': function(experience) {
+  S: function(experience) {
     return experience * 10;
   },
-  'A': function(experience) {
+  A: function(experience) {
     return experience * 5;
   },
-  'D': function(experience) {
+  D: function(experience) {
     return experience * 2;
-  }
+  },
 };
 
 function getExperienceByStrategy(strategy, level, experience) {
-  return (level in strategy) ? strategy[level](experience) : experience;
+  return level in strategy ? strategy[level](experience) : experience;
 }
 
-let s = getExperienceByStrategy(strategy, 'S', 10);
+let s = getExperienceByStrategy(strategy, "S", 10);
 
-let a = getExperienceByStrategy(strategy, 'A', 10);
+let a = getExperienceByStrategy(strategy, "A", 10);
 
-let d = getExperienceByStrategy(strategy, 'D', 10);
+let d = getExperienceByStrategy(strategy, "D", 10);
 
 console.log(s, a, d); // 23 100 50 20
 ```
+
+8).
