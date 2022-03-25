@@ -368,4 +368,46 @@ let d = getExperienceByStrategy(strategy, "D", 10);
 console.log(s, a, d); // 23 100 50 20
 ```
 
-8).
+8). Builder pattern
+
+```js
+class HotDog {
+  constructor(
+    bun = "Unknown",
+    ketchup = false,
+    mustard = false,
+    kraut = false
+  ) {
+    this.bun = bun;
+    this.ketchup = ketchup;
+    this.mustard = mustard;
+    this.kraut = kraut;
+  }
+
+  addKetchup() {
+    this.ketchup = false;
+    console.log("After added Ketchup, it looks like: ", this);
+    return this;
+  }
+
+  addMustard() {
+    this.mustard = true;
+    console.log("After added Mustard, it looks like: ", this);
+    return this;
+  }
+
+  addKraut() {
+    this.kraut = true;
+    console.log("After added Kraut, it looks like: ", this);
+    return this;
+  }
+}
+
+// new HotDog('wheat', false, true, true); // trditional way
+new HotDog("Corn")
+  .addKetchup()
+  .addMustard()
+  .addKraut(); // builder pattern way ~~
+
+// Tips 📝📝: This is how we make method/function chainning together !!!!
+```
