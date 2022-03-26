@@ -411,3 +411,62 @@ new HotDog("Corn")
 
 // Tips 📝📝: This is how we make method/function chainning together !!!!
 ```
+
+9). state pattern
+
+```js
+// class Human {
+//   emotions(mood) {
+//     switch(mood) {
+//       case 'happy':
+//         return 'I am happy » 😁';
+//       case 'sad':
+//         return 'I am sad » 😭';
+//       default:
+//         return 'I am ok » 😐';
+//     }
+//   }
+// }
+
+// above code is calling as switch hell ...
+
+class HappyState {
+  think() {
+    return "I am happy » 😁";
+  }
+}
+
+class SadState {
+  think() {
+    return "I am sad » 😭";
+  }
+}
+
+class OkState {
+  think() {
+    return "I am ok » 😐";
+  }
+}
+
+class Human {
+  state;
+
+  constructor() {
+    this.state = new OkState();
+  }
+
+  think() {
+    return this.state.think();
+  }
+
+  changeState(newState) {
+    this.state = newState;
+  }
+}
+
+const damon = new Human();
+
+damon.changeState(new SadState());
+damon.changeState(new HappyState());
+console.log(damon.think());
+```
