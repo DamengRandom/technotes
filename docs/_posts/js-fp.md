@@ -25,3 +25,14 @@ name = "Ella";
 
 greet(); // Hi, Ella
 ```
+
+[2] pure function code example:
+
+```js
+function greet(name) {
+  return `Hi, ${name}`;
+}
+
+greet("Damon"); // Hi, Damon
+greet("Ella"); // Hi, Ella
+```
