@@ -36,3 +36,11 @@ function greet(name) {
 greet("Damon"); // Hi, Damon
 greet("Ella"); // Hi, Ella
 ```
+
+pure function: (deterministic, predictable, easier to debug, return statement)
+
+- will not have any side effects
+- given the same input argument(s), will get the same output !! [One word; deterministic]
+- must have return statement for pure function, because we need to see an output
+- Also easier to debug based on the result is deterministic (When the function is deterministic, which means your program is more
+  redictable, at least you already know the output will be the same when you type in the same argument !!)
