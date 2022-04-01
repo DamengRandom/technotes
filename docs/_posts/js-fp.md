@@ -58,3 +58,18 @@ function renameThesis(newName) {
 renameThesis(’New Text’); // { name: ’New Text’, date: Date.now() };
 thesis; // { name: ’New Text’, date: Date.now() };
 ```
+
+[4] NO Side effects example:
+
+```js
+const thesis = { name: ’text’, date: Date.now() };
+
+function renameThesis(newName, oldThesis) {
+	return { name: newName, date: oldThesis.date }
+}
+
+const thesisTwo = renameThesis(’New Text’, thesis);
+
+thesis; // { name: ’text’, date: Date.now() };
+thesisTwo; // { name: ’New Text’, date: Date.now() };
+```
