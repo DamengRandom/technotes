@@ -77,3 +77,19 @@ thesisTwo; // { name: ’New Text’, date: Date.now() };
 Exercise:
 
 Check the question to give your answers about pure or impure functions: https://observablehq.com/@anjana/exercise-pure-functions?collection=@anjana/functional-javascript-first-steps
+
+[5] Recursion: staying out of the loop with recursion
+
+iterate function itself instead of using for loop. For example:
+
+```js
+function sum(numbers) {
+  if (numbers.length === 1) {
+    return numbers[0];
+  } else {
+    return numbers[0] + sum(numbers.slice(1));
+  }
+}
+
+sum([1, 2, 3, 4, 5, 6]);
+```
