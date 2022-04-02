@@ -73,3 +73,7 @@ const thesisTwo = renameThesis(’New Text’, thesis);
 thesis; // { name: ’text’, date: Date.now() };
 thesisTwo; // { name: ’New Text’, date: Date.now() };
 ```
+
+Exercise:
+
+Check the question to give your answers about pure or impure functions: https://observablehq.com/@anjana/exercise-pure-functions?collection=@anjana/functional-javascript-first-steps
