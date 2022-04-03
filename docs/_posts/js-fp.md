@@ -93,3 +93,21 @@ function sum(numbers) {
 
 sum([1, 2, 3, 4, 5, 6]);
 ```
+
+[6] iteration way of doing Fibonacci:
+
+```js
+function iterativeFibonacci(n) {
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+
+  let previous = 0;
+  let current = 1;
+  for (let i = n; i > 1; i--) {
+    let next = previous + current;
+    previous = current;
+    current = next;
+  }
+  return current;
+}
+```
