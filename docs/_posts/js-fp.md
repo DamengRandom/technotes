@@ -111,3 +111,19 @@ function iterativeFibonacci(n) {
   return current;
 }
 ```
+
+[7] recursion way of doing Fibonacci:
+
+```js
+function recursiveFibonacci(n) {
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+  return recursiveFibonacci(n - 2) + recursiveFibonacci(n - 1);
+}
+```
+
+After you run both code with 50, the iteration method is much faster than the recursion method … In a word, why? stack overflow ...
+
+How to improve performance of recursion functions??
+
+Answer: `Tail call optimisation`
