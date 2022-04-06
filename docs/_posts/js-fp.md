@@ -139,3 +139,18 @@ const foo = function() {
 
 foo();
 ```
+
+[9] pass a function as an argument:
+
+```js
+function sayHi() { return ‘hi’ }
+
+function greeting(hiMessage, name) { console.log(hiMessage() + ', ' + name) }
+
+greeting(sayHi, ‘Damon’);
+
+return a function:
+
+const sayHi = function() { return function() { console.log('hi') } }
+sayHi()();
+```
