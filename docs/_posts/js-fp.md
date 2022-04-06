@@ -127,3 +127,15 @@ After you run both code with 50, the iteration method is much faster than the re
 How to improve performance of recursion functions??
 
 Answer: `Tail call optimisation`
+
+[8] First-class function: function as variables, which can be passed around as values, like callbacks, example:
+
+assign a function to a variable:
+
+```js
+const foo = function() {
+  console.log("hi");
+};
+
+foo();
+```
