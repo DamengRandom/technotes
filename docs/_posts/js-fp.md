@@ -154,3 +154,22 @@ return a function:
 const sayHi = function() { return function() { console.log('hi') } }
 sayHi()();
 ```
+
+[10] Higher-order function: take in a function as a parameter and return another function as output, eg: map, reduce, filter
+
+Currying function: Chain function together, eg:
+
+```js
+function sum(n1) {
+  return function(n2) {
+    return n1 + n2;
+  };
+}
+sum(1)(1);
+```
+
+Function composition: flowing data through ...
+
+output of a function can be the next function input, so on and so on ..
+
+Example: `g(f(x))` !!
