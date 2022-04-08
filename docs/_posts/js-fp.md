@@ -173,3 +173,19 @@ Function composition: flowing data through ...
 output of a function can be the next function input, so on and so on ..
 
 Example: `g(f(x))` !!
+
+[11] Immutability: it means unchangeable, can only copy a new one and modify instead of modify the original one …
+
+Example: pop() in vanilla js
+
+```js
+function pop(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (i < array.length - 1) newArray.push(array[i]);
+  }
+  return newArray;
+}
+
+pop([1, 2, 3, 4]);
+```
