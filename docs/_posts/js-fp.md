@@ -189,3 +189,23 @@ function pop(array) {
 
 pop([1, 2, 3, 4]);
 ```
+
+[12] `update()` in vanilla js
+
+```js
+function update(index, value, array) {
+  let newArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (i === index) {
+      newArray.push(value);
+    } else {
+      newArray.push(array[i]);
+    }
+  }
+
+  return newArray;
+}
+
+update(0, "spelling", ["spellling", "is", "hard"]);
+```
