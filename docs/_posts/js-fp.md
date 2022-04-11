@@ -209,3 +209,13 @@ function update(index, value, array) {
 
 update(0, "spelling", ["spellling", "is", "hard"]);
 ```
+
+[13] `push()` in vanilla js
+
+```js
+function push(element, array) {
+  return [...array, element];
+}
+
+const postPush = push(4, [1, 2, 3]);
+```
