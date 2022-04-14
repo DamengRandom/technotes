@@ -6,23 +6,20 @@
 `map()` — creates a new array with the results of calling a provided function on every element in the calling array.
 
 Example:
-```js
 
+```js
 arr.forEach((num, index) => {
-    return arr[index] = num * 2;
+  return (arr[index] = num * 2);
 });
 // arr = [2, 4, 6, 8, 10]
 
-let doubled = arr.map(num => {
-    return num * 2;
+let doubled = arr.map((num) => {
+  return num * 2;
 });
 // doubled = [2, 4, 6, 8, 10]
-
 ```
 
-
 <b>2.</b> `viewport`: The viewport is the user's visible area of a web page.
-
 
 <b>3.</b> `autoprefixer`: is a tool to automatically write the vendor properties,
 it has been used fo support more properties for different browsers, such as IE, (polyfill consideration)
@@ -31,28 +28,27 @@ Example:
 
 ```css
 a {
-    transition: transform 1s;
+  transition: transform 1s;
 }
 /* After use autoprefixer, above code will be represented as this: */
 a {
-    -webkit-transition: -webkit-transform 1s;
-    transition: -ms-transform 1s;
-    transition: transform 1s;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -ms-transform 1s;
+  transition: transform 1s;
 }
 ```
-
 
 <b>4.</b> `composition function`:
 
 ```js
-const x = a => a + 1;
-const y = a => a * 2;
+const x = (a) => a + 1;
+const y = (a) => a * 2;
 
-console.log(x(y(5)))
+console.log(x(y(5)));
 ```
 
-
 <b>5.</b> `ORM` [Object Relational Mapper]
+
 - concept: its a technique which helps developer talk to database more easier
 
 * ORM complementary note:
@@ -65,9 +61,7 @@ Typical example: `Objection.js`
 
 Reference <a href="https://dzone.com/articles/the-complete-tutorial-on-the-top-5-ways-to-query-y-1" target="_blank">here</a>
 
-
 <b>6.</b> `Service Worker`: A service worker is a `script` that stands between your website and the network, giving you, among other things, the ability to intercept network requests and respond to them in different ways.
- 
 
 <b>7.</b> Copy file by terminal commands
 
@@ -79,24 +73,24 @@ cp -a /source_folder/. /destination_folder/
     Reference
 </a>
 
-
 <b>8.</b> `pure` function vs `impure` function
+
 - Pure function is predictable, because the output is based on the input and return a new value, which won't overwrite the previous value, it generates a new value, eg:
 
 ```js
 // input: x and output: x * x
 function square(x) {
-    return x * x;
+  return x * x;
 }
 // items: previous value and new value: items.map(square)
 function squareIt(items) {
-    return items.map(square);
+  return items.map(square);
 }
 ```
 
-* (note: reducer is pure function, because we need to make state predictable)
+- (note: reducer is pure function, because we need to make state predictable)
 
-- Impure function has change effect, which means it may call database, do some logic to overwrite values and so on, eg:
+* Impure function has change effect, which means it may call database, do some logic to overwrite values and so on, eg:
 
 ```js
 let outputs = [];
@@ -104,31 +98,27 @@ let outputs = [];
 function square(x) {
   const newX = updateDatabase(x); // call database change value
   return newX * newX;
-};
+}
 
 function squareIt(items) {
-  for(let i = 0; i < items.length; i++) {
+  for (let i = 0; i < items.length; i++) {
     items[i] = square(items[i]);
     // console.log(items[i]);
     outputs.push(items[i]);
   }
   return outputs;
-};
+}
 // outputs overwrite items, output as a new array
 ```
-
 
 <b>9.</b> `docker-compose`: A tool for running multiple docker containers at same time !!
 
 - allow developers to input multiple commands based on different services (such as database services, api services and web app services and etc)
 - Inside docker-compose file, dash (-) refers to array !!!
 
-
 <b>10.</b> Instead of using `array[0]`, we can use `array.find(e => e == !!e)` (handy one) !!
 
-
 <b>11.</b> `httpOnly: true` : don't want any javascript in browser to read or view the credentials like cookie
-
 
 <b>12.</b> CI/CD:
 
@@ -147,19 +137,18 @@ Tools: (Travis, BuildKite, Github actions and etc)
 <p>useCallback: returns the callback function</p>
 
 <b>15.</b> Router: Like React router: just `switch one component views`, change DOM Node elements
-  - hash: `window.addEventListener('hashChange', () => { ... });`
-  - history: `history.pushState();`
+
+- hash: `window.addEventListener('hashChange', () => { ... });`
+- history: `history.pushState();`
 
 Example: <a href="https://dev.to/kodnificent/how-to-build-a-router-with-vanilla-javascript-2a18" target="_blank">here</a>
 
-
 <b>16.</b> Vue computed VS watcher:
 
-Computed: for complex computations 
+Computed: for complex computations
 Watch: for API data fetching handling (eg: debounce)
 
 Details in <a href="https://vuejs.org/v2/guide/computed.html#Computed-vs-Watched-Property" target="_blank">here</a> And <a href="https://vuejs.org/v2/guide/computed.html#Watchers" target="_blank">here</a>
-
 
 <b>17.</b> `history.pushState` && `addEventListener('popState', () => {})`
 
@@ -181,7 +170,9 @@ The delete operator is used to delete all the variables and objects used in the 
   <head>
     <script src="main.js" defer></script>
   </head>
-  <body> ... </body>
+  <body>
+    ...
+  </body>
 </html>
 ```
 
@@ -202,9 +193,13 @@ The delete operator is used to delete all the variables and objects used in the 
 <b>21.</b> Add some styles for console log (🎏🎏🎏🎏)
 
 ```js
-var x = 'Damon',
-    y = 120;
-console.log(`%c${x} with Tax: %c$${y}`, 'font-weight: bold; color: red;', 'color: green;');
+var x = "Damon",
+  y = 120;
+console.log(
+  `%c${x} with Tax: %c$${y}`,
+  "font-weight: bold; color: red;",
+  "color: green;"
+);
 // first %c is for setting up first comma css stylings, second %c for second comma styling setup !!!
 ```
 
@@ -216,14 +211,11 @@ console.log(`%c${x} with Tax: %c$${y}`, 'font-weight: bold; color: red;', 'color
 
 <a href="https://medium.com/@dylanavery720/npmmmm-1-dev-dependencies-dependencies-8931c2583b0c#:~:text=The%20difference%20between%20these%20two,an%20npm%20install%20%2D%2Dsave." target="_blank">reference</a>
 
-
 <b>23.</b> Using `synk` to fix your npm packages vulnerabilities [Security Considerations]
-
 
 <b>24.</b> Why we need ORM?
 
 basically just communicate db more easier !!!!
-
 
 <b>25.</b> Tests types:
 
@@ -233,15 +225,12 @@ basically just communicate db more easier !!!!
 
 `End to end (e2e) test`: means to test entire application as a whole
 
-
 using `describe()` to define a suite: which is a group of tests
 using `it()` or `test()` to define a spec, a specific test
-
 
 <b>26.</b> Object Oriented Programming (OOP) [my opinion]:
 
 Trying to categorize objects into a class, and class will communicate with each and which has few features, eg: inheritance, which reduce the number of times for code repeat (enhance code performance)
-
 
 <b>27.</b> create-react-app `https` support
 
@@ -253,28 +242,23 @@ Resources:
 
 <a href="https://www.freecodecamp.org/news/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec/" target="_blank">Create your own ssl certificate</a>
 
-
 <b>28.</b> Native JS Http call tool: XHR (`XMLHttpRequest`)
 
 Using `XMLHttpRequest` to create a http request and send to server, and then server send data back to browser, and finally update page content
-
 
 <b>29.</b> CI & CD simple explanation:
 
 CI (Continuous Integration): Merge code in
 CD (Continuous Development): Release code out
 
-
 <b>30.</b> JavaScript `defer` attribute is used to specify that the script is executed when the page has finished parsing.
-
 
 <b>31.</b> What is DOM? DOM is a programming interface, could be HTML document
 
-
 <b>32.</b> What is arrow function? A shorter syntax for defining a javascript function
-
 
 <b>33.</b> What does `http.createServer` do? The `http.createServer()` method turns your computer into an HTTP server.
 
+<b>34.</b> `new Set(Array)`: Its a es6 feature, which is used for avoiding array element duplication issue. How to convert it back? `Array.from(SetVaraible)`
 
-<b>34.</b>
+<b>35.</b>
