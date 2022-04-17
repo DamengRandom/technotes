@@ -261,4 +261,6 @@ CD (Continuous Development): Release code out
 
 <b>34.</b> `new Set(Array)`: Its a es6 feature, which is used for avoiding array element duplication issue. How to convert it back? `Array.from(SetVaraible)`
 
-<b>35.</b>
+<b>35.</b> `variable !== null`, I don’t like this syntax because of: <a href="https://stackoverflow.com/questions/2559318/how-to-check-for-an-undefined-or-null-variable-in-javascript" target="_blank">reference</a>
+
+<b>36.</b>
