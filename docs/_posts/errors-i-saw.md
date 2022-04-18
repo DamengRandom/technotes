@@ -6,11 +6,11 @@
 // Case 1:
 
 function x() {
-  const val = {a: { b: [] } };
-  if(val.a.b[0] === 1) {
-    return 'I love JavaScript';
+  const val = { a: { b: [] } };
+  if (val.a.b[0] === 1) {
+    return "I love JavaScript";
   }
-  return 'nope ...';
+  return "nope ...";
 }
 
 x();
@@ -19,11 +19,11 @@ x();
 // Case 2:
 
 function x() {
-  const val = {a: { b: undefined } };
-  if(val.a.b[0] === 1) {
-    return 'I love JavaScript';
+  const val = { a: { b: undefined } };
+  if (val.a.b[0] === 1) {
+    return "I love JavaScript";
   }
-  return 'wrong ...';
+  return "wrong ...";
 }
 
 x();
@@ -35,10 +35,10 @@ x();
 
 function x() {
   const val = null;
-  if(val && val.a && val.a.b && val.a.b[0].value === 1) {
-    return 'I love JavaScript';
+  if (val && val.a && val.a.b && val.a.b[0].value === 1) {
+    return "I love JavaScript";
   }
-  return 'nope ...';
+  return "nope ...";
 }
 
 x();
@@ -46,21 +46,24 @@ x();
 
 // Case 4:
 
-var val = {a: {b: [] }};
-var thresh = {q: [1]}
+var val = { a: { b: [] } };
+var thresh = { q: [1] };
 function x() {
-  if((val && val.a && val.a.b && val.a.b[0] && val.a.b[0].value) === (thresh && thresh.q && thresh.q[0])) {
-    return 'I love JavaScript';
+  if (
+    (val && val.a && val.a.b && val.a.b[0] && val.a.b[0].value) ===
+    (thresh && thresh.q && thresh.q[0])
+  ) {
+    return "I love JavaScript";
   }
 
-  return 'nope ...';
+  return "nope ...";
 }
 
 x();
 // nope ...
 val.a.b[0];
 // undefined
-(val && val.a && val.a.b && val.a.b[0] && val.a.b[0].value);
+val && val.a && val.a.b && val.a.b[0] && val.a.b[0].value;
 // undefined
 thresh && thresh.q && thresh.q[0];
 // 1
@@ -69,18 +72,16 @@ val.a.b[0].value;
 // at <anonymous>:1:12
 ```
 
-
 2). Uncaught ReferenceError: `variable` is not defined
 
 ```js
-  function error() {
-    let y = 2;
-  }
+function error() {
+  let y = 2;
+}
 
-  error();
-  console.log('y: ', y); // Uncaught ReferenceError: y is not defined
+error();
+console.log("y: ", y); // Uncaught ReferenceError: y is not defined
 ```
-
 
 3). Uncaught TypeError: `functionName` is not a function
 
@@ -89,32 +90,37 @@ aloha();
 // TypeError
 
 var aloha = function aloha() {
-    console.log("Hello!");
+  console.log("Hello!");
 };
 
 // TypeError means we're trying to do something with a value that is not allowed
 ```
 
-
 4). Jest test error: `Invalid hook call.`
 
-How to fix: jest mock that hook function before each test cases. Eg: 
+How to fix: jest mock that hook function before each test cases. Eg:
 
 ```js
-jest.mock('react', () => ({
-  ...jest.requireActual(‘react'),
+jest.mock("react", () => ({
+  ...jest.requireActual("react"),
   useMemo: () => jest.fn(),
 }));
 ```
 
 <a href="https://stackoverflow.com/questions/62360926/invalid-hook-call-when-mocking-react-hoc-with-jest" target="_blank">Reference</a>
 
-
-5). Common typescript error: `npm package error` 
+5). Common typescript error: `npm package error`
 
 In typescript, when you install package and shown some error "Try `npm install @types/package-name`“
 
 Here is the solution: https://github.com/react-component/animate/issues/79
 
+6). How to clean up the `useDispatch` action inside useEffect hook?
 
-6).
+<a href="https://stackoverflow.com/questions/63944762/how-to-clean-up-a-redux-usedispatch-action-inside-useeffect" target="_blank">Solution</a>
+
+`With a void return, I thought my dispatch calls in the action creator will go straight to my reducer, but in my component nothing will be returned, so I shouldn't have to cleanup anything.`
+
+<a href="https://redux.js.org/usage/deriving-data-selectors#creating-unique-selector-instances" target="_blank">Reference 1</a>
+
+<a href="https://daveceddia.com/useeffect-hook-examples/" target="_blank">Reference 2</a>
