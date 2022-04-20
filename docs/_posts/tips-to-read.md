@@ -41,4 +41,6 @@
 
 <b>20.</b> <a href="https://ishadeed.com/article/flexbox-separator/" target="_blank">Flexbox reference</a>
 
-<b>20.</b> <a href="" target="_blank"></a>
+<b>21.</b> <a href="https://blog.bam.tech/developer-news/the-redux-best-practice-do-not-put-non-serializable-values-in-state-or-actions-explained" target="_blank">Redux-toolkit handle non-serializable data</a>
+
+<b>22.</b> <a href="" target="_blank"></a>
