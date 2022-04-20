@@ -113,7 +113,7 @@ jest.mock("react", () => ({
 
 In typescript, when you install package and shown some error "Try `npm install @types/package-name`“
 
-Here is the solution: https://github.com/react-component/animate/issues/79
+Here is the <a href="https://github.com/react-component/animate/issues/79" target="_blank">solution</a>
 
 6). How to clean up the `useDispatch` action inside useEffect hook?
 
