@@ -8,6 +8,24 @@
 - programs as a function !! (What should my function take in, and what my functions will return out)
 - avoid side effects (do nothing but return output based on nothing but input !!!!)
 
+[Side effect]: is when a function relies on or modifies something outside its parameters to do something.
+
+```js
+// Tiny example
+
+var b = 1;
+
+function sum(a) {
+  return a + b; // b is out of sum scope, if value of b gets changed, means sum result will get changed as well: side effect !!
+}
+
+sum(1); // 2
+```
+
+For example: a function which reads or writes from a variable outside its own arguments, a database, a file or the console can be described as having side effects.
+
+[Pure function]: if function is given same inputs, then will always returns the same output
+
 #### Example of pure and impure function:
 
 [1] impure function code example:
@@ -48,35 +66,35 @@ pure function: (deterministic, predictable, easier to debug, return statement)
 [3] Side effects example:
 
 ```js
-const thesis = { name: ’text’, date: Date.now() };
+const thesis = { name: "text", date: Date.now() };
 
 function renameThesis(newName) {
-	thesis.name = newName;
-	console.log(thesis);
+  thesis.name = newName;
+  console.log(thesis);
 }
 
-renameThesis(’New Text’); // { name: ’New Text’, date: Date.now() };
-thesis; // { name: ’New Text’, date: Date.now() };
+renameThesis("New Text");
+thesis; // { name: 'New Text', date: Date.now() };
 ```
 
-[4] NO Side effects example:
+[4] `NO` Side effects example:
 
 ```js
-const thesis = { name: ’text’, date: Date.now() };
+const thesis = { name: "text", date: Date.now() };
 
 function renameThesis(newName, oldThesis) {
-	return { name: newName, date: oldThesis.date }
+  return { name: newName, date: oldThesis.date };
 }
 
-const thesisTwo = renameThesis(’New Text’, thesis);
+const thesisTwo = renameThesis("New Text", thesis);
 
-thesis; // { name: ’text’, date: Date.now() };
-thesisTwo; // { name: ’New Text’, date: Date.now() };
+thesis; // { name: 'text', date: Date.now() };
+thesisTwo; // { name: 'New Text', date: Date.now() };
 ```
 
 Exercise:
 
-Check the question to give your answers about pure or impure functions: https://observablehq.com/@anjana/exercise-pure-functions?collection=@anjana/functional-javascript-first-steps
+Check the question to give your answers about pure or impure functions: <a href="https://observablehq.com/@anjana/exercise-pure-functions?collection=@anjana/functional-javascript-first-steps" target="_blank">here</a>
 
 [5] Recursion: staying out of the loop with recursion
 
@@ -143,11 +161,11 @@ foo();
 [9] pass a function as an argument:
 
 ```js
-function sayHi() { return ‘hi’ }
+function sayHi() { return 'hi' }
 
 function greeting(hiMessage, name) { console.log(hiMessage() + ', ' + name) }
 
-greeting(sayHi, ‘Damon’);
+greeting(sayHi, 'Damon');
 
 return a function:
 
