@@ -3,29 +3,30 @@
 `Webpack`: its module bundler which bundle styles, assets, scripts and generate as bundle files for hosting somewhere
 
 #### Main commands:
+
 1. `entry`: `input` path
 2. `output`: `output/generate` a bundle file
 3. `mode`: develop/production
 4. `module`: it has `rules` and each rule was run by installing certain packages for webpack to make bundle specific file
 5. `plugins`: do things `loaders` CANNOT do, eg: `terser-webpack-plugin` Making your `bundle.js` smaller !!
 
-
 #### Remembers:
+
 1). `publicPath`: tells webpack where the generic files are located
 
 2). `file-loader` example:
 
-``` js
-  rules: [
-    {
-      test: /\.(png|jpe?g|gif)$/i,
-      loader: 'file-loader',
-      options: {
-        name: `[name].[ext]`,
-        publicPath: 'https://res.cloudinary.com/cdn/test/image/upload/path/'
-      }
-    }
-  ]
+```js
+rules: [
+  {
+    test: /\.(png|jpe?g|gif)$/i,
+    loader: "file-loader",
+    options: {
+      name: `[name].[ext]`,
+      publicPath: "https://res.cloudinary.com/cdn/test/image/upload/path/",
+    },
+  },
+];
 ```
 
 3). Example of support scss:
@@ -61,8 +62,8 @@
 
 ```js
 // avoid unnecessary loading, just cache if something unchanged
-filename: 'bundle.[contenthash].js'
-filename: 'styles.[contenthash].js'
+filename: "bundle.[contenthash].js";
+filename: "styles.[contenthash].js";
 
 // DON'T forget to use CleanWebpackPlugin plugin tool to remove old cached files inside dist folder
 ```
@@ -92,26 +93,32 @@ new HtmlWebpackPlugin({
 
 ```js
 // In node file:
-app.use('/static', express.static(path.resolve(__dirname, '../dist')));
+app.use("/static", express.static(path.resolve(__dirname, "../dist")));
 
 // In webpack file:
-publicPath: '/static/'
+publicPath: "/static/";
 
 // we define the static path in express `/static` and then we webpack read it as `/static/`
 ```
 
 8). How NodeJS output html file like SSR:
+
 ```js
-['route1', 'route2'].forEach(function(route) { // multiple routes/pages
-  app.get('/' + route + '/', function(req, res) {
-    const pathToHtmlFile = path.resolve(__dirname, '../dist/' + route + '.html');
-    const contentFromHtmlFile = fs.readFileSync(pathToHtmlFile, 'utf-8');
+["route1", "route2"].forEach(function(route) {
+  // multiple routes/pages
+  app.get("/" + route + "/", function(req, res) {
+    const pathToHtmlFile = path.resolve(
+      __dirname,
+      "../dist/" + route + ".html"
+    );
+    const contentFromHtmlFile = fs.readFileSync(pathToHtmlFile, "utf-8");
     res.send(contentFromHtmlFile);
   });
 });
 ```
 
 9). `module federation` (webpack 5 feature):
+
 - is a concept which allows one application loads modules which comes from another application at run time!!
 
 Example:
@@ -140,7 +147,7 @@ output: {
   publicPath: 'http://localhost:9001/'
 },
 
-// module need to be exposed: 
+// module need to be exposed:
 new ModuleFederationPlugin({
   name: 'HelloWorldApp',
   filename: 'remoteEntry.js',
@@ -207,14 +214,14 @@ new ModuleFederationPlugin({
 ```css
 /* also need to import css files */
 @font-face {
-  font-family: 'Langar', cursive;
+  font-family: "Langar", cursive;
   font-weight: 300;
-  src: url('./fonts/Langar-Regular.ttf');
+  src: url("./fonts/Langar-Regular.ttf");
 }
 
 html {
   body {
-    font-family: 'Langar', cursive;
+    font-family: "Langar", cursive;
     font-weight: 300;
   }
 }
@@ -257,15 +264,15 @@ node_modules/
 "dev": "webpack serve --config webpack.dev.config.js --hot",
 ```
 
+13). Hot module replacement (HMR): update the code changes without browser page reloading !!
 
-13).
+Example: (codebase) <a href="" target="_blank">Damengrandom/webpack-node-react-recall-2022</a>
 
-
+<a href="https://blog.bitsrc.io/webpacks-hot-module-replacement-feature-explained-43c13b169986" target="_blank">Reference</a>
 
 References:
 
 - Recall knowledge from webpack 5 Udemy course <a href="https://www.udemy.com/course/webpack-from-beginner-to-advanced/learn/lecture/12761343#overview" target="_blank">here</a>
 - <a href="https://webpack.js.org/concepts/why-webpack/" target="_blank">why webpack?</a>
-
 
 <i>Please send to me by email to correct me <a href="mailto:damonwu0605@gmail.com">here</a> if it's wrong</i>
