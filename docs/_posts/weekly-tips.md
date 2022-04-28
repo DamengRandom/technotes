@@ -859,4 +859,18 @@ Lightweight version of react, and <a href="https://preactjs.com/guide/v10/differ
 
 So far: Preact doesn’t use React Synthetic event system, it uses `addEventListener` (native JS API) for event handling !!
 
-<b>39.</b>
+<b>39.</b> Difference between getStaticProps() and getServerSideProps() in next.js:
+
+getServerSideProps():
+
+- fetch the data first beforesending to client browser.
+- as the data is freshed everytime user loads the page, browser can get the latest data view
+
+getStaticProps()
+
+- is used for fetching the data at the build time
+- a bit monre faster, because of client side rendering for the data fetching process
+
+<a href="https://medium.com/eincode/next-js-data-fetching-getstaticprops-vs-getserversideprops-fcbf43d0ccac" target="_blank">Reference</a>
+
+<b>40.</b>
