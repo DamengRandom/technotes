@@ -873,4 +873,13 @@ getStaticProps()
 
 <a href="https://medium.com/eincode/next-js-data-fetching-getstaticprops-vs-getserversideprops-fcbf43d0ccac" target="_blank">Reference</a>
 
-<b>40.</b>
+<b>40.</b> Intersection observer API
+
+is used for observing the changes for the target element or ancestor element or with its top level document viewport
+
+what can do:
+
+- lazy load images during page scrolled or click 'load more' button
+- infinite scrolling, the specific element can be visisble during user scrolling the page
+
+<a href="https://github.com/thebuilder/react-intersection-observer" target="_blank">React version</a>
