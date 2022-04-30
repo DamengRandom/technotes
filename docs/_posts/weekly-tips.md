@@ -873,7 +873,7 @@ getStaticProps()
 
 <a href="https://medium.com/eincode/next-js-data-fetching-getstaticprops-vs-getserversideprops-fcbf43d0ccac" target="_blank">Reference</a>
 
-<b>40.</b> Intersection observer API
+<b>40.</b> Intersection Observer API
 
 is used for observing the changes for the target element or ancestor element or with its top level document viewport
 
