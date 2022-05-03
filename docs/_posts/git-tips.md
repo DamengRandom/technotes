@@ -178,3 +178,9 @@ in the current branch, it can be done by: `git mv OLD_FOLDER NEW_FOLDER` ensure 
 ![rename-git-files](https://res.cloudinary.com/dameng/image/upload/v1649890240/tipify/rename-git-files.png)
 
 **_ -- Reference: <a href="https://git-scm.com/docs" target="_blank">https://git-scm.com/docs</a> _**
+
+<b>23.</b> Git checkout to a branch you forgot the full name
+
+git checkout `git branch | grep branch-name-you-can-remember`
+
+<b>24.</b>
