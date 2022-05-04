@@ -22,7 +22,8 @@ function sum(a) {
 sum(1); // 2
 ```
 
-For example: a function which reads or writes from a variable outside its own arguments, a database, a file or the console can be described as having side effects.
+For example: a function which reads or writes from a variable outside its own arguments, a database, a file or the console can be described as having side effects (
+<a href="https://www.yld.io/blog/the-not-so-scary-guide-to-functional-programming/#:~:text=A%20side%20effect%20is%20when,described%20as%20having%20side%20effects." target="_blank">Reference</a>).
 
 [Pure function]: if function is given same inputs, then will always returns the same output
 
@@ -144,7 +145,9 @@ After you run both code with 50, the iteration method is much faster than the re
 
 How to improve performance of recursion functions??
 
-Answer: `Tail call optimisation` <a href="https://2ality.com/2015/06/tail-call-optimization.html" target="_blank">Reference</a>
+Answer: `Tail call optimisation` <a href="https://medium.com/hackernoon/es6-tail-call-optimization-43f545d2f68b#:~:text=One%20of%20the%20behind%2Dthe,call%20stack%20does%20not%20grow." target="_blank">Reference</a>
+
+What is Tail call optimisation (TCO)? Answer: to call a function from another function without growing the call stack
 
 [8] First-class function: function as variables, which can be passed around as values, like callbacks, example:
 
