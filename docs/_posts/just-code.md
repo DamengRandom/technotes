@@ -1014,3 +1014,17 @@ function a() {
 
 a(); // foo
 ```
+
+<b>26.</b> check anagrams code example:
+
+```js
+function sorting(arr1, arr2) {
+  if (arr1.sort().toString() === arr2.sort().toString()) {
+    return "Both are anangrams";
+  } else {
+    return "Not anagrams ..";
+  }
+}
+
+sorting(["m", "a", "y"], ["a", "m", "y"]); // "Both are anangrams"
+```
