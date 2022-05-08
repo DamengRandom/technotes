@@ -11,25 +11,24 @@ class Person {
 
   printNameArrowFunction() {
     setTimeout(() => {
-      console.log('Arrow Function: ' + this.name); // Arrow function: its like reading the scoped value which is from constructor level
+      console.log("Arrow Function: " + this.name); // Arrow function: its like reading the scoped value which is from constructor level
     }, 1000);
   }
 
   printNameNormalFunction() {
     setTimeout(function() {
-      console.log('Normal Function: ' + this.name); // Normal function: its like reading a global scope value which is not defined !!!
+      console.log("Normal Function: " + this.name); // Normal function: its like reading a global scope value which is not defined !!!
     }, 1000);
   }
 }
 
-let person = new Person('Damon');
+let person = new Person("Damon");
 
 person.printNameArrowFunction(); // Damon
 person.printNameNormalFunction(); //
 
-
 // Second example: `let` or `const`: will make output as nothing/empty !!
-const name = 'Ella';
+const name = "Ella";
 // Or let name = 'Ella';
 
 const arrowFunction = () => console.log(this.name);
@@ -38,12 +37,11 @@ function normalFunction() {
   console.log(this.name);
 }
 
-arrowFunction(); // 
+arrowFunction(); //
 normalFunction(); //
 
-
 // Third Example: if we need to display value by using let or const, we can remove this keyword
-let nameWithoutThis = 'Ella';
+let nameWithoutThis = "Ella";
 
 const arrowFunction = () => console.log(nameWithoutThis);
 
@@ -54,9 +52,8 @@ function normalFunction() {
 arrowFunction(); // Ella
 normalFunction(); // Ella
 
-
 // Fourth example: `var` will make this.name able to read the value !!!
-var name = 'Ella';
+var name = "Ella";
 
 const arrowFunction = () => console.log(this.name);
 
@@ -72,55 +69,58 @@ normalFunction(); // Ella
 
 ```js
 function overloadingJS(arg1, arg2, arg3) {
-  let word = 'hi';
-  let result = 'no arguments passed in ..';
+  let word = "hi";
+  let result = "no arguments passed in ..";
 
-  if (typeof arg1 !== 'undefined') result = arg1;
-  if (typeof arg2 !== 'undefined') result = word + ', ' + arg1 + ', ' + arg2;
-  if (typeof arg3 !== 'undefined') result = 'All arguments overload word: ' + arg1 + ', ' + arg2 + ', ' + arg3;
+  if (typeof arg1 !== "undefined") result = arg1;
+  if (typeof arg2 !== "undefined") result = word + ", " + arg1 + ", " + arg2;
+  if (typeof arg3 !== "undefined")
+    result = "All arguments overload word: " + arg1 + ", " + arg2 + ", " + arg3;
 
   return result;
 }
-undefined
-overloadingJS()
+undefined;
+overloadingJS();
 // "no arguments passed in .."
-overloadingJS('overload', 'with second argument.')
+overloadingJS("overload", "with second argument.");
 // "hi, overload, with second argument."
-overloadingJS('overload', 'with second argument', 'last argument also available.')
+overloadingJS(
+  "overload",
+  "with second argument",
+  "last argument also available."
+);
 // "All arguments overload word: overload, with second argument, last argument also available."
 ```
-
 
 <b>3.</b> function class output
 
 ```js
 function a() {
-  this.site = 'Damon';
+  this.site = "Damon";
 
-  function b(){
+  function b() {
     console.log(this.site);
-  } 
-  
+  }
+
   b();
 }
 
-var site = 'Ella';
+var site = "Ella";
 new a();
 // output is Ella
 ```
-
 
 <b>4.</b> how easily to get undefined 😂😂😂😂
 
 ```js
 let x = 5;
 let obj = {
-    x: 2,
-    getX: function(){
-        let x = 10;
-        console.log(this.x);
-    }
-}
+  x: 2,
+  getX: function() {
+    let x = 10;
+    console.log(this.x);
+  },
+};
 let y = obj.getX;
 y(); // undefined
 
@@ -129,21 +129,18 @@ let y = obj.getX(); // 2
 y; // undefined !!!
 ```
 
-
 <b>5.</b> `Object.create()`
-
 
 ```js
 var Employee = {
-  company: 'xyz'
-}
+  company: "xyz",
+};
 var emp1 = Object.create(Employee);
 delete emp1.company;
 console.log(emp1.company); // xyz
 emp1; // {}
-console.log(emp1.hasOwnProperty('company')); // false
+console.log(emp1.hasOwnProperty("company")); // false
 ```
-
 
 <b>6.</b> `delete`
 
@@ -158,28 +155,26 @@ console.log(output); // 0
 // reason: x is not an object it's local variable. delete operator doesn't affect local variable.
 ```
 
-
 <b>7.</b> "-" (minus) type coercion would convert string to number type
 
 ```js
 var x = 1;
-var y = '1';
+var y = "1";
 
-x - y; // 0 
+x - y; // 0
 ```
 
 ```js
-0 == false // true
-0 === false // false
+0 == false; // true
+0 === false; // false
 ```
-
 
 ```js
 var x = 1;
 
-(function(){
+(function() {
   var x = 2;
-  (function random(){
+  (function random() {
     x++;
     console.log(x);
     var x = 3;
@@ -196,14 +191,13 @@ var x = 1;
 // }
 ```
 
-
 <b>8.</b> setTimeout wrapped by IIFE function
 
 ```js
-function randomFunc(){
-  for (var i = 0; i < 2; i++){
-    (function(i){
-      setTimeout(() => console.log(i),1000);
+function randomFunc() {
+  for (var i = 0; i < 2; i++) {
+    (function(i) {
+      setTimeout(() => console.log(i), 1000);
     })(i);
   }
 }
@@ -212,14 +206,24 @@ randomFunc(); // 0 1
 ```
 
 ```js
-function func2(){
-  for (var i = 0; i < 3; i++){
-    setTimeout(() => console.log(i),2000);
+function func2() {
+  for (var i = 0; i < 3; i++) {
+    setTimeout(() => console.log(i), 2000);
   }
 }
 
 func2(); // 3 3 3
 ```
 
+<b>9.</b> eval??
 
-<b>9.</b>
+```js
+var k = 1;
+if (1) {
+  eval(function foo() {});
+  k += typeof foo;
+}
+console.log(k);
+```
+
+<b>10.</b>
