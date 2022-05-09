@@ -226,4 +226,21 @@ if (1) {
 console.log(k);
 ```
 
-<b>10.</b>
+<b>10.</b> `var` define
+
+```js
+(function fff() {
+  var tt = "213";
+})();
+
+console.log(tt); // Uncaught ReferenceError: tt is not defined
+```
+
+```js
+(function fff() {
+  var tt = (gg = "213");
+})();
+
+console.log(gg); // 213
+console.log(tt); // Uncaught ReferenceError: tt is not defined
+```
