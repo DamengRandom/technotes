@@ -1,5 +1,12 @@
 ### React Hooks Tips
 
+What is react hook?
+
+- Addition feature start from React 16.8
+- Achieve some functionality without creating a class, such as `useEffect` hook for life cycle functions
+- Make some part of code logics re-usable & sharable across different components by creating your own hook function(s)
+- Shorter syntax compared with class based components (eg: life cycle methods)
+
 ### Example codebase
 
 Please find my personal react hooks practices <a href="https://github.com/DamengRandom/hooks-recall" target="_blank">here</a>.
