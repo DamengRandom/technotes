@@ -270,4 +270,6 @@ Object.prototype.toString.call(["123, 123123"]); // '[object Array]'
 Object.prototype.toString.call({ x: "123, y: 123123" }); // '[object Object]'
 ```
 
-<b>37.</b>
+<b>37.</b> useEffect = componentDidMount + componentDidUpdate + compoenntWillUnmount
+
+<b>38.</b>
