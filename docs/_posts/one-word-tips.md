@@ -270,6 +270,8 @@ Object.prototype.toString.call(["123, 123123"]); // '[object Array]'
 Object.prototype.toString.call({ x: "123, y: 123123" }); // '[object Object]'
 ```
 
-<b>37.</b> useEffect = componentDidMount + componentDidUpdate + compoenntWillUnmount
+<b>37.</b> useEffect = componentDidMount + componentDidUpdate + componentWillUnmount
 
-<b>38.</b>
+<b>38.</b> Hooks might reduce your bundle size. (because the lines of code is less than class based components 🤪)
+
+<b>39.</b>
