@@ -274,4 +274,6 @@ Object.prototype.toString.call({ x: "123, y: 123123" }); // '[object Object]'
 
 <b>38.</b> Hooks might reduce your bundle size. (because the lines of code is less than class based components 🤪)
 
-<b>39.</b>
+<b>39.</b> `Memoization` is a way to impoprve the performance (because it avoids re-rendering)
+
+<b>40.</b>
