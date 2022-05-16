@@ -472,3 +472,12 @@ export default function useToggle(
   return [value, toggleState];
 }
 ```
+
+#### `useReducer` vs `useState`
+
+`useReducer` is handling mroe complext logic for the state change.
+`useState` is more easier just focus on the value of the state.
+
+eg: counter, setCounter -> one state action (useState)
+
+counter, incrementCounter, decrementCounter, multiplyCounter, divideCounter -> more state actions (useReducer)
