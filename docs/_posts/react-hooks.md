@@ -481,3 +481,9 @@ export default function useToggle(
 eg: counter, setCounter -> one state action (useState)
 
 counter, incrementCounter, decrementCounter, multiplyCounter, divideCounter -> more state actions (useReducer)
+
+#### Normal function vs React custom hook function
+
+- React custom hook function can use other react built-in hook functions, such as useState, useEffect and etc
+- React custom hook function starts from `use` keyword
+- React custom hook function cannot be used only in React component code, which cannot e used in normal functions
