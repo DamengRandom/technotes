@@ -1,6 +1,5 @@
 ### React general tips
 
-
 #### Make API call inside componentDidMount method instead of componentWillMount method:
 
 Explanation:
@@ -11,16 +10,13 @@ Due to the fact that JavaScript events are async, when you make an API call, the
 
 <a href="https://dev.to/torianne02/componentwillmount-vs-componentdidmount-5f0n" target="_blank">Reference</a>
 
-
-
 #### React Synthetic Events
 
 Concept: whenever we are triggering an event in React Component, we are not actually dealing with the real DOM event, instead we are cope with React's custom event type, a synthetic event
 
 Examples: `onClick()`, `onChange()`, `onBlur()` and etc ...
 
-* Note: if you want to access the event properties in an asynchronous way, you need to use `event.persist()`. Normally, for synthetic events, we can't access event properties in an asynchronous way.
-
+- Note: if you want to access the event properties in an asynchronous way, you need to use `event.persist()`. Normally, for synthetic events, we can't access event properties in an asynchronous way.
 
 When we use `event.persist()`?
 
@@ -36,8 +32,8 @@ export class PageChecker extends React.Component {
 
   handleClick(event) {
     event.persist(); // we need to use persist because of event has been used inside setState() callback function
-    this.setState(prevState => ({
-      page: prevState + event.target.value // event is used inside setState() callback function (here)
+    this.setState((prevState) => ({
+      page: prevState + event.target.value, // event is used inside setState() callback function (here)
     }));
   }
 
@@ -50,14 +46,13 @@ export class PageChecker extends React.Component {
 
 Reference: <a href="https://dev.to/nagwan/react-synthetic-events-34e5" target="_blank">here</a> And <a href="https://reactjs.org/docs/events.html" target="_blank">here</a>
 
-
-
 #### React Side Effect
 
-- Concept: it means anything that affects something outside of the scope of the current function thats being executed 
-<!-- 影响与当前函数运行范围以外的（代码/功能） -->
+- Concept: it means anything that affects something outside of the scope of the current function thats being executed
+  <!-- 影响与当前函数运行范围以外的（代码/功能） -->
 
 In React, generally, side effects responsible for:
+
 - API call from the server
 - call authentication service
 - Setting and clearing timers
@@ -65,28 +60,22 @@ In React, generally, side effects responsible for:
 
 Reference <a href="https://frontarm.com/james-k-nelson/introduction-to-react-effects/" target="_blank">here</a>
 
-
-
 #### Pure Component
 
 - `React.PureComponent` make the component `NOT` getting re-rendered !!
 - `React.PureComponent` implements `shouldComponentUpdate()` method
 - Knowledge recall: `pure function`: given an input, and getting an output, thats it !!
 - Why we use `PureComponent`: avoid unnecessary re-renders for the component and enhance the performance ..
-- When we use `PureComponent`? When the time we do `NOT` want to re-render the component !! 
+- When we use `PureComponent`? When the time we do `NOT` want to re-render the component !!
 
 Example:
 
 Please find it over <a href="https://stackblitz.com/edit/react-h8oehs?file=src%2FParentComponent.js" target="_blank">here</a>
 
-
-
 #### React Reconciliation
 
 Simple word: its talks about the `diffing algorithm`, React uses `key` attribute, make sure its unique !!
 According to the `diffing algorithm`, we update the Virtual DOM tree and re-render the specific DOM element !!
-
-
 
 #### React Portals
 
@@ -97,12 +86,10 @@ Render the `tooltips`, `Modal` code out of the `<body>{...}</body>` element, som
   {... body code logics ...}
 </body>
 // below part is React Portals code !!!
-<div class="portal-modal"> 
+<div class="portal-modal">
   {... modal code logics ...}
 </div>
 ```
-
-
 
 #### How to remove warning message inside useEffect like `[]`?
 
@@ -123,8 +110,8 @@ currentFetchRef.current = async function fetchRandomData(pageNumber) {
     dataString: JSON.stringify(response.results, null, 2),
     totalDataLoaded: [
       ...states.totalDataLoaded,
-      { [`page-${pageNumber}`]: response.results }
-    ]
+      { [`page-${pageNumber}`]: response.results },
+    ],
   });
 };
 
@@ -136,13 +123,12 @@ useEffect(() => {
 
 Example: <a href="https://codesandbox.io/s/hungry-brook-qb0g9?file=/src/App.js">Coded by me</a>
 
-
-
 #### Error Boundaries
 
 The idea of error boundary is a generic component that takes care of the errors for its children
 
-
+- it's a concept which only workable for class based component
+- catch errors in components tree and display fallback UI
 
 #### forwardRef
 
@@ -187,8 +173,6 @@ export class InputWrapper extends React.Component {
 export default InputWrapper;
 ```
 
-
-
 #### React JSX
 
 JSX stands for JavaScript XML
@@ -202,28 +186,24 @@ Example:
 Without JSX
 
 ```js
-const es6El = React.createElement('p', {}, 'Hi there ..'); // without JSX, headache
-ReactDOM.render(es6El, document.getElementById('root'));
+const es6El = React.createElement("p", {}, "Hi there .."); // without JSX, headache
+ReactDOM.render(es6El, document.getElementById("root"));
 ```
 
 With JSX
 
 ```js
 const jsxEl = <p>Hi there ..</p>;
-ReactDOM.render(jsxEl, document.getElementById('root')); // life is easier ..
+ReactDOM.render(jsxEl, document.getElementById("root")); // life is easier ..
 ```
 
 JSX expression: `{}`, eg: `{variableName}`
-
-
 
 #### What is Virtual DOM
 
 It is an object which represents the DOM tree. (Shortest version)
 
 Try to get more details from this github repository: <a href="https://github.com/DamengRandom/virtual-dom-study" target="_blank">here</a>
-
-
 
 #### In React, we need to `bind(this)` if we are <strong>NOT</strong> using arrow function
 
@@ -257,8 +237,6 @@ handleClick () {
 
 Reference: <a href="https://stackoverflow.com/questions/52979915/why-we-dont-need-to-bind-the-arrow-function-in-react" target="_blank">here</a>
 
-
-
 #### extract component logic into a specific function
 
 <a href="https://www.youtube.com/watch?v=ocKqJCYkJCs">Please follow with first 5 mins</a>
@@ -268,19 +246,19 @@ Reference: <a href="https://stackoverflow.com/questions/52979915/why-we-dont-nee
 <b>Try to use reducer pattern to update api call (fetch) states ..</b>
 
 ```js
-import React, { useEffect, useReducer } from 'react';
-import axios from 'axios';
+import React, { useEffect, useReducer } from "react";
+import axios from "axios";
 // will move to a constant file (Demo only so make it as one file)
 const API_STATES = {
-  ERROR: 'error',
-  LOADING: 'loading',
-  SUCCESS: 'success'
+  ERROR: "error",
+  LOADING: "loading",
+  SUCCESS: "success",
 };
 // will move to a constant file (Demo only so make it as one file)
 const initialState = {
   error: null,
   loading: false,
-  posts: []
+  posts: [],
 };
 // will move to a reducer file (Demo only so make it as one file)
 function fetchReducer(state = initialState, action) {
@@ -289,18 +267,18 @@ function fetchReducer(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        error: action.error
+        error: action.error,
       };
     case API_STATES.LOADING:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case API_STATES.SUCCESS:
       return {
         ...state,
         loading: false,
-        posts: action.posts
+        posts: action.posts,
       };
     default:
       return state;
@@ -317,12 +295,12 @@ export default function App() {
     const fetchPosts = async () => {
       try {
         const res = await axios.get(
-          'https://jsonplaceholder.typicode.com/posts'
+          "https://jsonplaceholder.typicode.com/posts"
         );
         if (res.status === 200) {
           dispatch({ type: API_STATES.SUCCESS, posts: res.data });
         } else {
-          throw Error('Fetch failed ..');
+          throw Error("Fetch failed ..");
         }
       } catch (error) {
         dispatch({ type: API_STATES.ERROR, error });
@@ -348,27 +326,31 @@ export default function App() {
 }
 ```
 
-
 ### One typical example causing re-rendering without using React.memo
 
-* The comment code is a good way to avoid component unnecessary re-renderings
+- The comment code is a good way to avoid component unnecessary re-renderings
 
 ```js
 /* eslint-disable react/button-has-type */
-import React from 'react';
-import { Box } from '@material-ui/core';
-import products from '../../../definitions/constants/productList';
-import Product from '../Product';
+import React from "react";
+import { Box } from "@material-ui/core";
+import products from "../../../definitions/constants/productList";
+import Product from "../Product";
 
 function ProductList(): React.ReactElement {
   const [toggle, setToggle] = React.useState(false);
   return (
     <>
-      <Box display="flex" flexDirection="column" flexWrap="wrap" justifyContent="space-around">
+      <Box
+        display="flex"
+        flexDirection="column"
+        flexWrap="wrap"
+        justifyContent="space-around"
+      >
         <button
           onClick={() => {
             setToggle(!toggle);
-            console.log('re-rendered: all the products inside product list ..');
+            console.log("re-rendered: all the products inside product list ..");
           }}
         >
           test re-render: {toggle.toString()}
@@ -381,10 +363,17 @@ function ProductList(): React.ReactElement {
   );
 }
 export default ProductList;
-import React, { memo } from 'react';
-import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@material-ui/core';
-import useStyles from './index.styles';
-import { ProductProps } from './interfaces';
+import React, { memo } from "react";
+import {
+  Box,
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@material-ui/core";
+import useStyles from "./index.styles";
+import { ProductProps } from "./interfaces";
 
 // export default memo(function Product({ product }: ProductProps): React.ReactElement {
 //   const classes = useStyles();
@@ -431,10 +420,10 @@ import { ProductProps } from './interfaces';
 ```js
 export default function Product({ product }: ProductProps): React.ReactElement {
   const classes = useStyles();
-  const [cardValue, seCardValue] = React.useState('');
+  const [cardValue, seCardValue] = React.useState("");
 
   React.useEffect(() => {
-    console.log('do some actions with the product props: ', product.name);
+    console.log("do some actions with the product props: ", product.name);
   });
 
   return (
@@ -456,7 +445,11 @@ export default function Product({ product }: ProductProps): React.ReactElement {
             </Box>
           </CardMedia>
           <CardContent>
-            <Typography className={classes.productName} variant="h5" component="h2">
+            <Typography
+              className={classes.productName}
+              variant="h5"
+              component="h2"
+            >
               {product.name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
@@ -471,22 +464,25 @@ export default function Product({ product }: ProductProps): React.ReactElement {
 }
 ```
 
-
 #### How to dynamically generate grid in react:
 
 ```js
-const Template = ({ numberOfChildren, ...args }) => (<Stack {...args}>
-  {
-    [...Array(numberOfChildren).keys()].map(num => (
-      <div style={{
-        width: '50px',
-        height: '50px',
-        backgroundColor: 'lightblue',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}>{num + 1}</div>
-    ))
-  }
-  </Stack>);
+const Template = ({ numberOfChildren, ...args }) => (
+  <Stack {...args}>
+    {[...Array(numberOfChildren).keys()].map((num) => (
+      <div
+        style={{
+          width: "50px",
+          height: "50px",
+          backgroundColor: "lightblue",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {num + 1}
+      </div>
+    ))}
+  </Stack>
+);
 ```
