@@ -130,6 +130,40 @@ The idea of error boundary is a generic component that takes care of the errors 
 - it's a concept which only workable for class based component
 - catch errors in components tree and display fallback UI
 
+For class component:
+
+Example:
+
+```js
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    logErrorToMyService(error, errorInfo); // third party error tracking service, such as Rollbar ..
+  }
+
+  render() {
+    if (this.state.hasError) return <h1>Something went wrong ..</h1>;
+    return this.props.children;
+  }
+}
+
+// Then in component, we can call like this:
+
+<ErrorBoundary><YourComponent/></ErrorBoundary>
+
+// Or you can make it event more specific: both of them will log its own errors
+<ErrorBoundary><YourComponentOne/></ErrorBoundary>
+<ErrorBoundary><YourComponentTwo/></ErrorBoundary>
+```
+
 #### forwardRef
 
 Code example:
