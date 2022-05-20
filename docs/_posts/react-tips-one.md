@@ -565,3 +565,7 @@ const Template = ({ numberOfChildren, ...args }) => (
   </Stack>
 );
 ```
+
+#### What is memoization?
+
+- is a process to cache the values, so next time function gets values from cache rather than making a new request or recompute the function
