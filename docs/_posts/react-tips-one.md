@@ -164,6 +164,51 @@ class ErrorBoundary extends React.Component {
 <ErrorBoundary><YourComponentTwo/></ErrorBoundary>
 ```
 
+For functional component, the way we handle errors is using `try {} catch {}`
+
+Example:
+
+```js
+import * as React from "react";
+import ReactDOM from "react-dom";
+
+function ErrorHandler({ error }) {
+  return (
+    <div role="alert">
+      <p>An error occurred:</p>
+      <pre>{error.message}</pre>
+    </div>
+  );
+}
+
+function City({ name }) {
+  try {
+    return <div>Hello, visit {name.toUpperCase()}</div>;
+  } catch (error) {
+    return <ErrorHandler error={error} />;
+  }
+}
+
+function Country({ capital }) {
+  try {
+    return <div>Hello, visit {capital.toUpperCase()}</div>;
+  } catch (error) {
+    return <ErrorHandler error={error} />;
+  }
+}
+
+function App() {
+  return (
+    <div>
+      <Country />
+      <City />
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
 #### forwardRef
 
 Code example:
