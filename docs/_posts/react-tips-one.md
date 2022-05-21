@@ -569,3 +569,7 @@ const Template = ({ numberOfChildren, ...args }) => (
 #### What is memoization?
 
 - is a process to cache the values, so next time function gets values from cache rather than making a new request or recompute the function
+
+Why we need memoization for React?
+
+- we don't want to trigger whole component re-rendered ..
