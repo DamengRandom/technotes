@@ -573,3 +573,7 @@ const Template = ({ numberOfChildren, ...args }) => (
 Why we need memoization for React?
 
 - we don't want to trigger whole component re-rendered ..
+
+Here we go: `React.memo`
+
+React.memo is a HOC, which takes a compoennt as prop and returns component that prevents a compoennt from re-rendering if props have not been changed
