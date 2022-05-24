@@ -577,3 +577,22 @@ Why we need memoization for React?
 Here we go: `React.memo`
 
 React.memo is a HOC, which takes a compoennt as prop and returns component that prevents a compoennt from re-rendering if props have not been changed
+
+Example:
+
+```js
+import { memo, useRef } from "react";
+
+function Counts() {
+  const renderCount = useRef(0);
+  return (
+    <div>
+      <p>
+        Nothing has changed here but I've now rendered:{" "}
+        <span>{renderCount.current++} time(s)</span>
+      </p>
+    </div>
+  );
+}
+export default memo(Counts);
+```
