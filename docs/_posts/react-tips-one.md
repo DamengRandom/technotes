@@ -596,3 +596,5 @@ function Counts() {
 }
 export default memo(Counts);
 ```
+
+useMemo(): is a React hook functin which returns memorized values and avoid re-rendering if the dependencies to a function have not been changed
