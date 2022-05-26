@@ -598,3 +598,53 @@ export default memo(Counts);
 ```
 
 useMemo(): is a React hook functin which returns memorized values and avoid re-rendering if the dependencies to a function have not been changed
+
+Example:
+
+```js
+import "./styles.css";
+import { useState, useMemo } from "react";
+
+export default function UseMemoDemo() {
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([""]);
+
+  const expensiveCalculation = (num) => {
+    let newValue = 0;
+
+    for (let i = 0; i < 1000; i++) {
+      newValue = num + i;
+    }
+    console.log("new expensive calculated value rendered");
+    return newValue;
+  };
+
+  const increaseCount = () => {
+    setCount((c) => c + 1);
+  };
+
+  const addTodos = () => {
+    setTodos((t) => [...t, "new todo"]);
+  };
+
+  // const showExpensiveCalculationResult = useMemo(() => expensiveCalculation(count), [count]);
+  const showExpensiveCalculationResult = expensiveCalculation(count);
+
+  console.log("will trigger re-render??");
+
+  return (
+    <div className="App">
+      {todos.map((t, i) => (
+        <p key={`the-${t}-${i}`}>
+          <span>{t}</span>
+        </p>
+      ))}
+      <button onClick={increaseCount}>+ count</button>
+      <button onClick={addTodos}>+ todo</button>
+      {showExpensiveCalculationResult}
+    </div>
+  );
+}
+// the most important thing is: if you were not using useMemo, the expensiveCalculation function will get re-rendered when you click add todo button !!!! (Please try on it when you recall useMemo hook)
+// https://www.w3schools.com/react/react_usememo.asp
+```
