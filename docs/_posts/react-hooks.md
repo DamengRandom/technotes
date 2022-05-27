@@ -487,3 +487,58 @@ counter, incrementCounter, decrementCounter, multiplyCounter, divideCounter -> m
 - React custom hook function can use other react built-in hook functions, such as useState, useEffect and etc
 - React custom hook function starts from `use` keyword
 - React custom hook function cannot be used only in React component code, which cannot e used in normal functions
+
+#### Another useCallback code example:
+
+```js
+// file 1: UseCallbackDemo.js
+import { useCallback, useState } from "react";
+import UseCallbackTodos from "./UseCallbackTodos";
+
+export default function UseCallbackDemo() {
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([]);
+
+  const increaseCount = () => {
+    setCount((c) => c + 1);
+  };
+
+  const addTodo = useCallback(() => {
+    setTodos((t) => [...t, "new todo"]);
+  }, []);
+
+  // const addTodo = () => {
+  //   setTodos((t) => [...t, "new todo"]);
+  // };
+
+  return (
+    <>
+      <UseCallbackTodos todos={todos} addTodo={addTodo} />
+      <div>
+        <p>Count value: {count}</p>
+        <button onClick={increaseCount}>+ count</button>
+      </div>
+    </>
+  );
+}
+
+// file 2: UseCallbackTodos.js
+import { memo } from "react";
+
+const UseCallbackTodos = ({ todos, addTodo }) => {
+  console.log("re-render the child Todos component");
+  return (
+    <>
+      {todos.map((t, i) => (
+        <p key={`the-${t}-${i}`}>{t}</p>
+      ))}
+      <button onClick={addTodo}>+ todo</button>
+    </>
+  );
+};
+
+export default memo(UseCallbackTodos);
+
+// One word: if we don't use useCallback, when we click + count button, the todos component will get re-rendered !!!
+// Thats why we need this hook, keep function memorized !!
+```
