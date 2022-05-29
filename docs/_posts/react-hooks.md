@@ -542,3 +542,33 @@ export default memo(UseCallbackTodos);
 // One word: if we don't use useCallback, when we click + count button, the todos component will get re-rendered !!!
 // Thats why we need this hook, keep function memorized !!
 ```
+
+#### Add useRef example code:
+
+```js
+import React, { useEffect, useRef, useState } from "react";
+
+export default function App() {
+  const [val, setVal] = useState("");
+  const countRef = useRef(0);
+
+  const handleTimesCount = (value) => {
+    countRef.current = value?.length + 1;
+  };
+
+  return (
+    <>
+      {/* Test code only */}
+      <input
+        ref={countRef}
+        value={val}
+        onChange={(e) => {
+          setVal(e.target.value);
+          handleTimesCount(val);
+        }}
+      />
+      <p>input value change times (count): {countRef.current}</p>
+    </>
+  );
+}
+```
