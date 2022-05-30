@@ -124,3 +124,35 @@ Here is the <a href="https://github.com/react-component/animate/issues/79" targe
 <a href="https://redux.js.org/usage/deriving-data-selectors#creating-unique-selector-instances" target="_blank">Reference 1</a>
 
 <a href="https://daveceddia.com/useeffect-hook-examples/" target="_blank">Reference 2</a>
+
+7). I found that if we use <StrictMode></StrictMode> in React, its going to be render things twice at first time rendering or page loading
+
+```js
+import { useEffect, useRef, useState } from "react";
+
+const UseRefDemo = () => {
+  const [inputValue, setInputValue] = useState("");
+  const count = useRef(0);
+
+  useEffect(() => {
+    count.current = count.current + 1;
+  });
+
+  console.log("re-rendered??");
+
+  return (
+    <>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <h1>Render Count: {count.current}</h1>
+    </>
+  );
+};
+
+export default UseRefDemo;
+```
+
+8).
