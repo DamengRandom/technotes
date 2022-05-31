@@ -572,3 +572,7 @@ export default function App() {
   );
 }
 ```
+
+#### Pitfalls of overusing `useContext()`:
+
+If you define a useContext and pass value object across the entire app.
