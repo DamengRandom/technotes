@@ -155,4 +155,21 @@ const UseRefDemo = () => {
 export default UseRefDemo;
 ```
 
+```js
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+import UseRefDemo from "./UseRefDemo";
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(
+  // with Stict mode, useRef trigger 2 times, without StrictMode, useRef trigger only 1 time
+  <StrictMode>
+    <UseRefDemo />
+  </StrictMode>
+);
+```
+
 8).
