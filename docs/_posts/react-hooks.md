@@ -576,3 +576,8 @@ export default function App() {
 #### Pitfalls of overusing `useContext()`:
 
 If you define a useContext and pass value object across the entire app.
+
+In above case, if you have 2 components which needs 2 different context values for rendering each time, like below:
+
+<CompOne firstAttr={firstAttr} />
+<CompTwo secondAttr={secondAttr} />
