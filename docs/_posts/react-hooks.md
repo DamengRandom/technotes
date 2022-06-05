@@ -579,5 +579,11 @@ If you define a useContext and pass value object across the entire app.
 
 In above case, if you have 2 components which needs 2 different context values for rendering each time, like below:
 
+```js
 <CompOne firstAttr={firstAttr} />
 <CompTwo secondAttr={secondAttr} />
+```
+
+As you can see, when you update the state value of secondAttr, the CompOne and CompTwo will get re-rendered, because of they have shared value object which is defined globally ...
+
+In this case, a big head time for large scale of project, because performance will be heaveily impacted ...
