@@ -587,3 +587,31 @@ In above case, if you have 2 components which needs 2 different context values f
 As you can see, when you update the state value of secondAttr, the CompOne and CompTwo will get re-rendered, because of they have shared value object which is defined globally ...
 
 In this case, a big head time for large scale of project, because performance will be heaveily impacted ...
+
+Even we add `useMemeo` for the provider value object, it still trigger re-rendered when value changed ...
+
+something like this:
+
+```js
+const CounterProvider = ({ children }) => {
+  const [count, setCount] = React.useState(0);
+  const [hello, sayHello] = React.useState("Hello world");
+
+  const increment = () => setCount((counter) => counter + 1);
+  const decrement = () => setCount((counter) => counter - 1);
+
+  const value = React.useMemo(
+    () => ({
+      count,
+      increment,
+      decrement,
+      hello,
+    }),
+    [count, hello]
+  );
+
+  return (
+    <CounterContext.Provider value={value}>{children}</CounterContext.Provider>
+  );
+};
+```
