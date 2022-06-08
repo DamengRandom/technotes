@@ -615,3 +615,9 @@ const CounterProvider = ({ children }) => {
   );
 };
 ```
+
+In conclusion, we should only consider to implement `useContext()` for the states those less changes, more frequent state updates, better not consider to use `useContext()`, which will cause performance issue when app scaling to larger app ...
+
+This is why for larger app, better use Redux !!
+
+<a href="https://blog.logrocket.com/pitfalls-of-overusing-react-context/" target="_blank">Reference</a>

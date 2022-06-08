@@ -1028,3 +1028,5 @@ function sorting(arr1, arr2) {
 
 sorting(["m", "a", "y"], ["a", "m", "y"]); // "Both are anangrams"
 ```
+
+<b>27.</b>
