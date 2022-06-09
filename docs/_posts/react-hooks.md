@@ -621,3 +621,13 @@ In conclusion, we should only consider to implement `useContext()` for the state
 This is why for larger app, better use Redux !!
 
 <a href="https://blog.logrocket.com/pitfalls-of-overusing-react-context/" target="_blank">Reference</a>
+
+#### How to access the DOM element in React?
+
+Answer: `useRef()` hook
+
+```js
+const domRef = useRef(null); // [define]
+<div ref={domRef}>...</div>; // Assign to element [mount]
+domRef.current; // point to DOM element [mounted]
+```

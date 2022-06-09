@@ -1029,4 +1029,14 @@ function sorting(arr1, arr2) {
 sorting(["m", "a", "y"], ["a", "m", "y"]); // "Both are anangrams"
 ```
 
-<b>27.</b>
+<b>27.</b> `Object.defineProperty` example
+
+```js
+let obj = {
+  name: "value_name",
+};
+
+Object.defineProperty(obj, "name", { writable: true, value: "new_value" });
+
+console.log(obj); // { name: 'new_value' }
+```
