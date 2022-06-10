@@ -631,3 +631,15 @@ const domRef = useRef(null); // [define]
 <div ref={domRef}>...</div>; // Assign to element [mount]
 domRef.current; // point to DOM element [mounted]
 ```
+
+#### The equivlent method `useComponentWillMount` in react hook:
+
+```js
+const useComponentWillMount = (cb) => {
+  const willMount = useRef(true);
+
+  if (willMount.current) cb();
+
+  willMount.current = false;
+};
+```
