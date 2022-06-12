@@ -648,3 +648,43 @@ export default function UseMemoDemo() {
 // the most important thing is: if you were not using useMemo, the expensiveCalculation function will get re-rendered when you click add todo button !!!! (Please try on it when you recall useMemo hook)
 // https://www.w3schools.com/react/react_usememo.asp
 ```
+
+#### `Batchng` in react?
+
+means group a couple of states update into a single re-renderer
+
+```js
+const App = () => {
+  const [counter1, setCounter1] = useState(0);
+  const [counter2, setCounter2] = useState(0);
+
+  const handleClickWithBatching = () => {
+    setCounter1((count) => count + 1);
+    setCounter2((count) => count + 1);
+  };
+
+  const handleClickWithoutBatching = () => {
+    Promise.resolve().then(() => {
+      setCounter1((count) => count + 1);
+      setCounter2((count) => count + 1);
+    });
+  };
+
+  console.log("counters", counter1, counter2);
+  /* 
+    On click of Single re-render
+    conuters: 1 1
+   
+    On click of Multiple re-render
+    conuters: 2 1
+    counters: 2 2
+   */
+
+  return (
+    <div className="App">
+      <h2 onClick={handleClickWithBatching}>Single Re-render</h2>
+      <h2 onClick={handleClickWithoutBatching}>Multiple Re-render</h2>
+    </div>
+  );
+};
+```
