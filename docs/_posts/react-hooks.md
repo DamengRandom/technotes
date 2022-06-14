@@ -643,3 +643,45 @@ const useComponentWillMount = (cb) => {
   willMount.current = false;
 };
 ```
+
+#### React hook can replace render props and HOC, examples below
+
+HOC version:
+
+```js
+function withWindowWidth(BaseComponent) {
+  class DerivedClass extends React.Component {
+    state = {
+      windowWidth: window.innerWidth,
+    };
+
+    onResize = () => {
+      this.setState({
+        windowWidth: window.innerWidth,
+      });
+    };
+
+    componentDidMount() {
+      window.addEventListener("resize", this.onResize);
+    }
+
+    componentWillUnmount() {
+      window.removeEventListener("resize", this.onResize);
+    }
+
+    render() {
+      return <BaseComponent {...this.props} {...this.state} />;
+    }
+  }
+  // Extra bits like hoisting statics omitted for brevity
+  return DerivedClass;
+}
+
+// To be used like this in some other file:
+
+const MyComponent = (props) => {
+  return <div>Window width is: {props.windowWidth}</div>;
+};
+
+export default withWindowWidth(MyComponent);
+```
