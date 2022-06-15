@@ -685,3 +685,43 @@ const MyComponent = (props) => {
 
 export default withWindowWidth(MyComponent);
 ```
+
+Render props version:
+
+```js
+class WindowWidth extends React.Component {
+  propTypes = {
+    children: PropTypes.func.isRequired,
+  };
+
+  state = {
+    windowWidth: window.innerWidth,
+  };
+
+  onResize = () => {
+    this.setState({
+      windowWidth: window.innerWidth,
+    });
+  };
+
+  componentDidMount() {
+    window.addEventListener("resize", this.onResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.onResize);
+  }
+
+  render() {
+    return this.props.children(this.state.windowWidth);
+  }
+}
+
+// To be used like this:
+
+const MyComponent = () => {
+  return (
+    <WindowWidth>{(width) => <div>Window width is: {width}</div>}</WindowWidth>
+  );
+};
+```
