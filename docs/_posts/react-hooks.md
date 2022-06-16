@@ -725,3 +725,24 @@ const MyComponent = () => {
   );
 };
 ```
+
+Hook version:
+
+```js
+const useWindowWidth = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const onResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+  return width;
+};
+
+// To be used like this:
+
+const MyComponent = () => {
+  const width = useWindowWidth();
+  return <div>Window width is: {width}</div>;
+};
+```
