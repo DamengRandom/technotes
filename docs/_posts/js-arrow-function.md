@@ -11,9 +11,9 @@ Classic Example:
 ```js
 const obj = {
   fn: () => {
-    console.log(this) // `this` refers to window or global object
-  }
-}
+    console.log(this); // `this` refers to window or global object
+  },
+};
 ```
 
 Difference between arrow function and normal function
@@ -23,19 +23,24 @@ Difference between arrow function and normal function
 const anotherObject = {
   asyncCall: (param, cb, parameter) => {
     console.log(`${param}, ${cb(parameter)}`); // Result is: "Arrow function output: , undefined " because parameter was not defined from global window object
-  }
-}
+  },
+};
 
 const callback = (parameter) => {
   return parameter;
-}
+};
 
 const obj = {
-  parameter: 'parameter example 1',
-  fn: () => { // here is the key, if we use arrow function here, this refers to global object
-    anotherObject.asyncCall('Arrow function output: ', callback, this.parameter);
-  }
-}
+  parameter: "parameter example 1",
+  fn: () => {
+    // here is the key, if we use arrow function here, this refers to global object
+    anotherObject.asyncCall(
+      "Arrow function output: ",
+      callback,
+      this.parameter
+    );
+  },
+};
 
 console.log(obj.fn());
 ```
@@ -45,19 +50,24 @@ console.log(obj.fn());
 const anotherObject = {
   asyncCall: (param, cb, parameter) => {
     console.log(`${param}, ${cb(parameter)}`); // Result is: "Arrow function output: , parameter example 1"
-  }
-}
+  },
+};
 
 const callback = (parameter) => {
   return parameter;
-}
+};
 
 const obj = {
-  parameter: 'parameter example 1',
-  fn: function () { // here is the key, we need to use `normal` function here in order to pass this.parameter value into other object
-    anotherObject.asyncCall('Arrow function output: ', callback, this.parameter);
-  }
-}
+  parameter: "parameter example 1",
+  fn: function() {
+    // here is the key, we need to use `normal` function here in order to pass this.parameter value into other object
+    anotherObject.asyncCall(
+      "Arrow function output: ",
+      callback,
+      this.parameter
+    );
+  },
+};
 
 console.log(obj.fn());
 ```
@@ -65,7 +75,7 @@ console.log(obj.fn());
 Shorter example to compare result of Normal function and Arrow function:
 
 ```js
-// Arrow function
+// Normal  function
 const const myObject = {
   p: 1,
   myMethod: function () {
@@ -74,7 +84,7 @@ const const myObject = {
 };
 myObject.myMethod(); // {p: 1, myMethod: ƒ}
 
-// Normal function
+// Arrow function
 const myObject1 = {
   p: 1,
   myMethod: () => {
@@ -84,27 +94,29 @@ const myObject1 = {
 myObject1.myMethod(); // window object
 ```
 
-
 Last example for Normal function & Arrow function:
 
 ```js
 // Arrow function
 const anotherObject = {
   asyncCall: function(param, cb) {
-    console.log(`${param}, ${cb()}`)
-  }
-}
+    console.log(`${param}, ${cb()}`);
+  },
+};
 
 const arrowFnCallback = () => {
   return this.parameter;
-}
+};
 
 const obj = {
-  parameter: 'parameter example',
+  parameter: "parameter example",
   fn: function() {
-    anotherObject.asyncCall('Normal function output: ', arrowFnCallback.bind(this));
-  }
-}
+    anotherObject.asyncCall(
+      "Normal function output: ",
+      arrowFnCallback.bind(this)
+    );
+  },
+};
 
 console.log(obj.fn()); // Normal function output: , undefined
 ```
@@ -113,20 +125,23 @@ console.log(obj.fn()); // Normal function output: , undefined
 // Normal function
 const anotherObject = {
   asyncCall: function(param, cb) {
-    console.log(`${param}, ${cb()}`)
-  }
-}
+    console.log(`${param}, ${cb()}`);
+  },
+};
 
 function normalFnCallback() {
   return this.parameter;
 }
 
 const obj = {
-  parameter: 'parameter example',
+  parameter: "parameter example",
   fn: function() {
-    anotherObject.asyncCall('Normal function output: ', normalFnCallback.bind(this));
-  }
-}
+    anotherObject.asyncCall(
+      "Normal function output: ",
+      normalFnCallback.bind(this)
+    );
+  },
+};
 
 console.log(obj.fn());
 ```
