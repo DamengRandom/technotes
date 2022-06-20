@@ -98,7 +98,7 @@ obj.newProp; // OUTPUT is 'prop value' because the writable is false !!!
 
 <b>10.</b> `bind()`, `apply()`, `call()`:
 
-- `bind()`: Simple memo: you don't want to lose `this` for another function
+- `bind()`: you don't want to lose `this` for another function
   Example:
 
 ```js
