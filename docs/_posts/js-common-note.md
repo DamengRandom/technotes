@@ -142,7 +142,8 @@ console.log(guy.name.apply(anotherGuy)); // name: Another Guy
 const array = [1, 2];
 const newElements = ["a", "b"];
 
-array.push.apply(array, newElements); // [1, 2, 'a', 'b']
+array.push.apply(array, newElements); // 4
+array; // [1, 2, 'a', 'b']
 ```
 
 - `call()`: calls a function with a given `this` value and arguments provided individually
