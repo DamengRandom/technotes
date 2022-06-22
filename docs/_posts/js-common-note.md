@@ -531,7 +531,7 @@ function add(number) {
 3. functional programming
 
 - What? In JavaScript, simply example would be function nested inside another function
-- Why? avoid side effects (keep data mutable), also make function as pure function (give input, get same output)
+- Why? avoid side effects (keep data immutable), also make function as pure function (give input, get same output)
 
 4. difference between classical inheritance and prototypal inheritance
 
