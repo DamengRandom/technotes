@@ -43,4 +43,6 @@
 
 <b>21.</b> <a href="https://blog.bam.tech/developer-news/the-redux-best-practice-do-not-put-non-serializable-values-in-state-or-actions-explained" target="_blank">Redux-toolkit handle non-serializable data</a>
 
-<b>22.</b> <a href="" target="_blank"></a>
+<b>22.</b> <a href="https://javascript.plainenglish.io/most-common-mistakes-in-javascript-coding-test-for-algorithm-42fa93e592a8" target="_blank">Mistakes in JavaScript coding test</a>
+
+<b>23.</b> <a href="" target="_blank"></a>
