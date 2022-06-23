@@ -45,4 +45,6 @@
 
 <b>22.</b> <a href="https://javascript.plainenglish.io/most-common-mistakes-in-javascript-coding-test-for-algorithm-42fa93e592a8" target="_blank">Mistakes in JavaScript coding test</a>
 
-<b>23.</b> <a href="" target="_blank"></a>
+<b>23.</b> <a href="https://www.freecodecamp.org/news/codebyte-why-are-explicit-semicolons-important-in-javascript-49550bea0b82/" target="_blank">Why we need semicolons in JavaScript</a>
+
+<b>24.</b> <a href="" target="_blank"></a>
