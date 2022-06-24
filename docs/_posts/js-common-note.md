@@ -808,7 +808,7 @@ console.log(
 // // As you can setEnvironmentData, cc is returned an error, but dd which is Map and which returns a value, no error !!!
 ````
 
-<b>25.</b> Please Please remember: addEventListener and removeEventListener the method MUST MUST be the same one: [related with momery mismatch issue: functions are different memroy address]
+<b>25.</b> Please Please remember: addEventListener and removeEventListener the method MUST MUST be the same one: [related with momery mismatch issue: functions have the different memory address]
 
 ```js
 // wrong way:
