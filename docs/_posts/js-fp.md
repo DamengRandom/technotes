@@ -62,7 +62,7 @@ pure function: (deterministic, predictable, easier to debug, return statement)
 - given the same input argument(s), will get the same output !! [One word; deterministic]
 - must have return statement for pure function, because we need to see an output
 - Also easier to debug based on the result is deterministic (When the function is deterministic, which means your program is more
-  redictable, at least you already know the output will be the same when you type in the same argument !!)
+  predictable, at least you already know the output will be the same when you type in the same argument !!)
 
 [3] Side effects example:
 
