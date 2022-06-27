@@ -15,7 +15,7 @@
 - `FROM`: from which database table
 - `WHERE`: condition
 - `ORDER BY`: default is ascending order
-- `AS`: give a custom column name
+- `AS`: give a column custom name
 - `AND` `OR` `NOT`: operators, ☞ venn diagram (eg: <>: means not equal)
 - `IN`: contains which values, eg:
 
@@ -106,7 +106,7 @@ DELETE FROM which table WHERE: which record
 DELETE FROM sql_store.NewTable WHERE status = 3;
 ```
 
-- `CREATE TABLE`: used fro copy a table and its records, eg:
+- `CREATE TABLE`: used for copy a table and its records, eg:
 
 ```sql
 create table NewTableNAME as select * from orders;
