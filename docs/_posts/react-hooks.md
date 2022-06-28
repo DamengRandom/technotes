@@ -262,7 +262,7 @@ React.useEffect(() => {
 
 Sometimes, <strong style="font-size: 1.5rem;">the cost of optimization would be more than not optimization ...</strong>
 
-<p>Its fairly depending on the situations, if big list with handleClick, then we can use useCallback, but id the function is just for toggle state setup, then, its better not overuse useCallback hook ~~</p>
+<p>Its fairly depending on the situations, if big list with handleClick, then we can use useCallback, but if the function is just for toggle state setup, then, its better not overuse useCallback hook ~~</p>
 
 #### useLocalStorage
 

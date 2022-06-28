@@ -90,7 +90,7 @@ function squareIt(items) {
 
 - (note: reducer is pure function, because we need to make state predictable)
 
-* Impure function has change effect, which means it may call database, do some logic to overwrite values and so on, eg:
+* Impure function has side effect, which means it may call database, do some logic to overwrite values and so on, eg:
 
 ```js
 let outputs = [];
@@ -249,6 +249,7 @@ Using `XMLHttpRequest` to create a http request and send to server, and then ser
 <b>29.</b> CI & CD simple explanation:
 
 CI (Continuous Integration): Merge code in
+<br />
 CD (Continuous Development): Release code out
 
 <b>30.</b> JavaScript `defer` attribute is used to specify that the script is executed when the page has finished parsing.
