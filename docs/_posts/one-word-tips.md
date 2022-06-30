@@ -49,7 +49,7 @@ console.log(x(y(5)));
 
 <b>5.</b> `ORM` [Object Relational Mapper]
 
-- concept: its a technique which helps developer talk to database more easier
+- concept: its a technique which helps developer to talk to database more easier
 
 * ORM complementary note:
 

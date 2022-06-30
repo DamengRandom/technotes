@@ -475,7 +475,7 @@ export default function useToggle(
 
 #### `useReducer` vs `useState`
 
-`useReducer` is handling mroe complext logic for the state change.
+`useReducer` is handling more complex logic for the state change.
 `useState` is more easier just focus on the value of the state.
 
 eg: counter, setCounter -> one state action (useState)
@@ -486,7 +486,7 @@ counter, incrementCounter, decrementCounter, multiplyCounter, divideCounter -> m
 
 - React custom hook function can use other react built-in hook functions, such as useState, useEffect and etc
 - React custom hook function starts from `use` keyword
-- React custom hook function cannot be used only in React component code, which cannot e used in normal functions
+- React custom hook function cannot be used only in React component code, which cannot be used in normal functions
 
 #### Another useCallback code example:
 
