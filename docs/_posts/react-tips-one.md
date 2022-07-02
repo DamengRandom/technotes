@@ -576,7 +576,7 @@ Why we need memoization for React?
 
 Here we go: `React.memo`
 
-React.memo is a HOC, which takes a compoennt as prop and returns component that prevents a compoennt from re-rendering if props have not been changed
+React.memo is a HOC, which takes a compoennt as prop and returns component that prevents a component from re-rendering if props have not been changed
 
 Example:
 

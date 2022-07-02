@@ -863,13 +863,13 @@ So far: Preact doesn’t use React Synthetic event system, it uses `addEventList
 
 getServerSideProps():
 
-- fetch the data first beforesending to client browser.
+- fetch the data first before sending to client browser.
 - as the data is freshed everytime user loads the page, browser can get the latest data view
 
 getStaticProps()
 
 - is used for fetching the data at the build time
-- a bit monre faster, because of client side rendering for the data fetching process
+- a bit more faster, because of client side rendering for the data fetching process
 
 <a href="https://medium.com/eincode/next-js-data-fetching-getstaticprops-vs-getserversideprops-fcbf43d0ccac" target="_blank">Reference</a>
 
