@@ -278,3 +278,7 @@ Object.prototype.toString.call({ x: "123, y: 123123" }); // '[object Object]'
 <b>39.</b> `Memoization` is a way to impoprve the performance (because it avoids re-rendering)
 
 <b>40.</b> Hooks will not share state between components (component state is local to that component), if you need to share the state, please using `useContext()`
+
+<b>41.</b> Ref forwarding is a technique for automatically passing a <a href="https://reactjs.org/docs/refs-and-the-dom.html" target="_blank">ref</a> through a component to one of its children
+
+<b>42.</b>
