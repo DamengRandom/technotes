@@ -690,3 +690,8 @@ const App = () => {
 ```
 
 <a href="https://crypt.codemancers.com/posts/2021-06-29-batching-in-react/#:~:text=Batching%20means%20grouping%20multiple%20state%20updates%20into%20a%20single%20re%2Drender." target="_blank">Reference</a>
+
+##### Uncontrolled component vs Controlled component
+
+Controlled component: the form data is handled by React component (recommanded)
+Uncontrolled component: the form data is handled by DOM itself
