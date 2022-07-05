@@ -65,7 +65,52 @@ Reference: <a href="https://www.youtube.com/watch?v=FLmBqI3IKMA" target="_blank"
 
 Purpose: Analyzing the algorithm you created !!
 
-The time complexity is based on the operations inside loop, for instance:
+The time complexity is based on the operations inside loop,
+
+Examples of Big O complexcity:
+
+```js
+// O(n):
+let n = calcNValue();
+
+for (let i = 0; i < n; i++) {
+  console.log("Totally is going to loop n times: ", i);
+}
+
+// O(1):
+
+for (let i = 0; i < 2; i++) {
+  for (let j = 0; j < 4; j++) {
+    console.log(
+      "Totally is going to loop 8 (2 x 4) times, values are constants, not like variable n"
+    );
+  }
+}
+
+// O(n^2)
+let n = calcNValue();
+
+for (let i = 0; i < n; i++) {
+  for (let j = 0; j < n; j++) {
+    console.log("Totally is going to loop n * n times", i, j);
+  }
+}
+
+// O(5n) === O(n)
+let n = calcNValue();
+
+for (let i = 0; i < 5n; i++) {
+  console.log("Totally is going to loop n times", i);
+}
+
+// O(n ^ 3)
+
+for (let i = 0; i < n; i++) {
+  for (let j = 0; j < n * n; j++) {
+    console.log("Totally is going to loop n * n * n times", i, j);
+  }
+}
+```
 
 <!-- re-write please -->
 
