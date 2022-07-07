@@ -112,7 +112,30 @@ for (let i = 0; i < n; i++) {
 }
 ```
 
-<!-- re-write please -->
+Some typeical time complexcity calculation examples:
+
+```js
+// Fabonacci:
+let numCalculations = 0;
+
+function fibonacci(n) {
+  // Please memo: O(2 ^ n)
+  numCalculations++;
+  console.log("times: ", numCalculations);
+
+  if (n < 2) return n;
+
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Factorial:
+function factorial(n) {
+  // Please memo: O(n)
+  if (n === 0 || n === 1) return 1;
+
+  return n * factorial(n - 1);
+}
+```
 
 References
 
