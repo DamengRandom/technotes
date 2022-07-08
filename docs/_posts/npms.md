@@ -28,7 +28,7 @@ Step 3: <a href="https://egghead.io/lessons/react-extract-a-custom-hook-into-its
 - Go to README.md file and copy the App.js file content into `Usage` section
 - update package.json file with following code
 
-``` js
+```js
 // ensure react version is `>=` certain version eg: 16.8.6
 
 "peerDependencies": {
@@ -44,7 +44,7 @@ Step 3: <a href="https://egghead.io/lessons/react-extract-a-custom-hook-into-its
 }
 
 // last step (important) -> update package version
-npm version major --no-git-tag-version // -> x.0.0 
+npm version major --no-git-tag-version // -> x.0.0
 npm version minor --no-git-tag-version // -> 0.x.0
 npm version patch --no-git-tag-version // -> 0.0.x
 ```
@@ -53,14 +53,18 @@ Step 4: git add and commit and finally publish your package
 
 ```js
 git add .
-git commit  
+git commit
 npm publish // before run this command, ensure you have logged in npm in your local terminal
 ```
 
 Step 5: done ~~
 
-
 6). react-query (fetching caching & update asynchronous data for React): <a href="https://www.npmjs.com/package/react-query" target="_blank">Link</a>
 
+7). How to test library locally without publishing it:
 
-7).
+Application A and library B as an example: A is the application, B is a javascript library which is used for A application.
+
+<br/>
+
+Steps below:
