@@ -281,4 +281,6 @@ Object.prototype.toString.call({ x: "123, y: 123123" }); // '[object Object]'
 
 <b>41.</b> Ref forwarding is a technique for automatically passing a <a href="https://reactjs.org/docs/refs-and-the-dom.html" target="_blank">ref</a> through a component to one of its children
 
-<b>42.</b>
+<b>42.</b> SNS is a good choice when you have a large amount of subscribers who needs to get the latest updated data !!!
+
+<b>43.</b>
