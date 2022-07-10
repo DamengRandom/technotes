@@ -68,3 +68,46 @@ Application A and library B as an example: A is the application, B is a javascri
 <br/>
 
 Steps below:
+
+Steps below:
+
+Step 1: run `npm run build` to generate the latest changes for library B.
+
+Step 2: copy `dist` folder from library B codebase
+
+Step 3: create a `library` folder inside apllication A, and then paste `dist` folder files from library B to application A.
+
+Step 4: update the package.json file the package `path`, something like below:
+
+```js
+// file:./library is the most important part !!!!
+{
+  ...
+  "dependency": {
+    "packageC": "file:./library"
+  }
+  ...
+}
+```
+
+Here is the <a href="https://stackoverflow.com/questions/14381898/local-dependency-in-package-json" target="_blank">reference</a>
+
+Step 5: create a simple package.json file inside library folder, like this
+
+```js
+{
+  "name": "ApplicationA",
+  "version": "1.1.0",
+  "description": "Your description",
+  "main": "bundle-file-from-library-B.js"
+  "author": {
+    "name": "Your Name",
+    "email": "your@email.address"
+  },
+  "license": "LicenceValue"
+}
+```
+
+Step 6: Run `npm install` command to install your latest local changes package !! (PLESE REMEMBER THIS STEP !!!!!)
+
+Now, you can run application A, the library B with latest local changes should be available when you run application A.
