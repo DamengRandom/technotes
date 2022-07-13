@@ -476,4 +476,11 @@ Specify how the white space inside element get handled
 
 eg: `nowrap`: text will never wrap to the next line, always continue with the same line until `br` tag occurs.
 
-8).
+8). Flexbox: A web layout tool for CSS 3
+
+consists of 2 part:
+
+- flex container: specify the parent box properties
+- flex items: : specify children box properties
+
+9).
