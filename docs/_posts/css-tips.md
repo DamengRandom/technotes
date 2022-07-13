@@ -483,4 +483,18 @@ consists of 2 part:
 - flex container: specify the parent box properties
 - flex items: : specify children box properties
 
-9).
+esential properties:
+
+- flex-wrap: wrap box inside a flex container
+
+- flex vs inline-flex
+  `(display: flex;)` -> will make element become as a flex box container
+  `(display: inline-flex;)` -> will make element become as a flex box container and container will be inline
+
+- (align-items: stretch:) make the element fill the entire container
+
+- cross axis in flexbox means flex-direction, either row or column
+
+  9). Pesudo elements: allow developers to create items that do not exist in the document tree, eg: `p::first-line { ... }`
+
+  10).
