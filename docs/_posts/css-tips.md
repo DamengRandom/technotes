@@ -495,6 +495,12 @@ esential properties:
 
 - cross axis in flexbox means flex-direction, either row or column
 
-  9). Pesudo elements: allow developers to create items that do not exist in the document tree, eg: `p::first-line { ... }`
+<b>8.</b> Quick memo section:
 
-  10).
+1). Pesudo elements: allow developers to create items that do not exist in the document tree, eg: `p::first-line { ... }`
+
+2). LESS refers to Leaner Stylesheets
+
+3). Pseudo classes: select element with certain conditions, eg: `a:hover`, `a:focus` and etc
+
+4).
