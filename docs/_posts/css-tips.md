@@ -503,4 +503,6 @@ esential properties:
 
 3). Pseudo classes: select element with certain conditions, eg: `a:hover`, `a:focus` and etc
 
-4).
+4). `box-sizing`: allow developers to include padding and border in elements' total width and height, eg: `border-box`
+
+5).
