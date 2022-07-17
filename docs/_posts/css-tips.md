@@ -505,4 +505,11 @@ esential properties:
 
 4). `box-sizing`: allow developers to include padding and border in elements' total width and height, eg: `border-box`
 
-5).
+More details:
+
+width + padding + border = actual width of an element
+height + padding + border = actual height of an element
+
+5). float: positioning element horizontally either towards the left or right of the container
+
+6).
