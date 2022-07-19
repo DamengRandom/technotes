@@ -18,6 +18,7 @@ Essential concepts:
 Before start, setup basics environment to run TypeScript code:
 
 Please install TypeScript in your browser first by running this command:
+
 ```js
 // Install first
 npm install -g typescript
@@ -26,9 +27,10 @@ tsc -v
 ```
 
 How to compile a `.ts` file to `.js` file (ts -> js)?
+
 ```js
 // eg: create a xxx.ts file first
-// Then run command 
+// Then run command
 tsc xxx.ts
 // you will see js file has been generated as
 // xxx.js
@@ -39,6 +41,7 @@ ts xxx --watch
 ```
 
 The reason of using types:
+
 <ol style="padding-left: 3rem;">
   <li>Static type checking</li>
   <li>Give hint about what's going wrong?</li>
@@ -59,10 +62,10 @@ let name: string = 'damon'; // string
 let isTrue: boolean = false; // boolean
 let number: number = 1; // number
 
-// Sub type can be used for initialize a variable or reassign the value to a declared variable 
+// Sub type can be used for initialize a variable or reassign the value to a declared variable
 let n = null; // sub-type null
 let u = undefined; // sub-type undefined
-isTrue = n; 
+isTrue = n;
 name = u;
 
 // 2 ways to define array:
@@ -82,7 +85,7 @@ enum ColorWithValue {Red="Red", Green="Green", Blue="Blue"};
 console.log('Enum color with value: ', ColorWithValue.Green);
 
 // When to use type 'any'?
-// When the time we need to reassign value to different type, Eg: 
+// When the time we need to reassign value to different type, Eg:
 let valueReadFromLibrary: any = 10;
 valueReadFromLibrary = false;
 
@@ -157,7 +160,7 @@ console.log(fullNameWithInterface(p2));
 
 class Employee { // ts class structure:
   employeeName: string; // class variable
-  
+
   constructor(en: string) { // constructor
     this.employeeName = en;
   }
@@ -221,8 +224,6 @@ console.log(instanceOfB.message());
 // console.log(instanceOfB.name); // got error for accessing instanceOfB.name
 ```
 
-
-
 <b>2.</b> Difference between interface and type:
 
 `Interface`: describes the data shapes, eg: object (what the object going to look like)
@@ -251,12 +252,10 @@ type Age = number;
 
 const myAge: Age = 30;
 ```
+
 <a href="https://dev.to/saadsharfuddin/type-vs-interface-in-typescript-35i6" target="_blank">Reference</a>
 
-
-
 <b>3.</b> `xxx.d.ts`: its call typescript declaration file, which is the type definition files that allow to use JavaScript code in Typescript.
-
 
 `tsc --init` // autogernate the `tsconfig.json` file
 
@@ -264,37 +263,66 @@ const myAge: Age = 30;
 
 <a href="https://thisthat.dev/d-ts-vs-ts/" target="_blank">reference</a>
 
-
-
 <b>4.</b> TypeScript for React:
 
 Please hover the error and check the correct type definition
 
-Or 
+Or
 
 Right click and peek the definition to see the difference
 
 Typescript hooks define type:
 
-
 1. useState:
 
-eg: 
+eg:
 
 ```js
-const [data, setData] = useState<number | null | undefined>(5);
+const [data, setData] = (useState < number) | null | (undefined > 5);
 setData(null);
 
-const [data, setData] = useState<{text: string}>({text: 'hi'});
-setData({ text: 'hello' });
+const [data, setData] = useState < { text: string } > { text: "hi" };
+setData({ text: "hello" });
 ```
 
 Or we can do this way:
 
 ```js
 interface TextNode {
-  text: string
+  text: string;
 }
-const [data, setData] = useState<TextNode>({ text: 'hi' });
-setData({ text: 'hello' });
+const [data, setData] = useState < TextNode > { text: "hi" };
+setData({ text: "hello" });
 ```
+
+<b>5.</b> TypeScript `tsconfig.json` confugurations:
+
+Case 1: `"declarations": true` // will generate declaration file for you
+
+Case 2: `"include": ["src/**/*.ts"]` // define to include which files to be compiled to js
+
+Case 3: `"exclude": ["src/**/*.spec.ts"]` // exclude all test files for compiling to js
+
+Case 4: `"extends": ["../tsconfig-base.json"]` // get more configurations for tsconfig
+
+Case 5: `"noEmitOnError": true` // no files will get generated when error detected by ts
+
+Case 6: `"sourceMap": true` // will generate the `*.js.map` file for the codebase
+
+Case 7: `"inlineSources": true` // make sourcemap display in one line format ~
+
+Case 8: `"inlineSourceMap": true` // inlineSourceMap = sourceMap + inlineSources
+
+Case 9: `"strict": true` // make typescript in strict mode
+
+Case 10: `"traceResolution": true` // display the compiled files information in terminal
+
+Case 11: `"diagnostics": true` // display general infromation of compiled result in terminal
+
+Case 12: `"listFiles": true` // show all the gernated files in terminal
+
+Case 13: `"pretty": true` // show some colourful words in terminal
+
+Case 14: `"noUnusedParameters": true` // remove unused paramemters when compiling from ts to js
+
+Case 15: `"noUnusedLocals": true` // remove unused var, let const values
