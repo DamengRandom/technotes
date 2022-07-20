@@ -512,4 +512,21 @@ height + padding + border = actual height of an element
 
 5). float: positioning element horizontally either towards the left or right of the container
 
-6).
+6). `div + p` means select all `p` elements placed immediately after the `div` element, eg:
+
+```html
+<h1>Heading 1</h1>
+<div>
+  Division 1
+  <p>paragraph 1</p>
+</div>
+<p>paragraph 2</p>
+<!-- Will be selected -->
+<p>paragraph 3</p>
+<div>
+  Division 2
+</div>
+<span> Span 1 </span>
+```
+
+7).
