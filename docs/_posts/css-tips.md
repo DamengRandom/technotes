@@ -529,4 +529,9 @@ height + padding + border = actual height of an element
 <span> Span 1 </span>
 ```
 
-7).
+7). CSS Grid vs Flexbox:
+
+CSS Grid is 2 dimentional layout system, which means it can handle both column and rows
+Flexbox is 1 dimentional layout system, which means it only can handle either column or rows
+
+8).
