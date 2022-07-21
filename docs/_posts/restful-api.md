@@ -8,6 +8,8 @@ Wording: Representational State Transfer (REST)
 
 Currently understanding (might be wrong), RESTFul API is an architectural style which uses HTTP requests to access/use data (resource), more like an architectural design pattern
 
+REST is web standards based architecture which uses HTTP protocol
+
 REST determines how the API looks like, developers can set bunch of rules to create their own customized APIs
 
 1). Common Http request consists of
