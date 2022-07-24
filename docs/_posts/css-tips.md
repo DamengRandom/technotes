@@ -534,4 +534,6 @@ height + padding + border = actual height of an element
 CSS Grid is 2 dimentional layout system, which means it can handle both column and rows
 Flexbox is 1 dimentional layout system, which means it only can handle either column or rows
 
-8).
+8). CSS Sprites: combining multiple images in a single large image, also able to only make 1 HTTP request instead of multiple HTTP requests
+
+<b>9.</b>
