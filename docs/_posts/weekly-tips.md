@@ -884,4 +884,6 @@ what can do:
 
 <a href="https://github.com/thebuilder/react-intersection-observer" target="_blank">React version</a>
 
-<b>41.</b>
+<b>41.</b> `Eventbus` in JS: is a `publisher / subscriber` pattern, can be used for `decoupling` the components of an application, which means a component can react to events fired from another component without them having direct dependencies with each other. <a href="https://pineco.de/creating-a-javascript-event-bus/" target="_blank">A Quick Reference</a>
+
+<b>42.</b>
