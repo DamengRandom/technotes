@@ -283,4 +283,6 @@ Object.prototype.toString.call({ x: "123, y: 123123" }); // '[object Object]'
 
 <b>42.</b> SNS is a good choice when you have a large amount of subscribers who needs to get the latest updated data !!!
 
-<b>43.</b>
+<b>43.</b> `Yarn` support offline mode which means if the package s you have installed before, after network dropped out, the package can be installed by using yarn offline !!
+
+<b>44.</b>
