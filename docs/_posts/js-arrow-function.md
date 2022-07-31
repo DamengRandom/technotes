@@ -93,3 +93,25 @@ const myObject1 = {
 };
 myObject1.myMethod(); // window object
 ```
+
+Some new examples:
+
+```js
+// arrow function `this` inside a class:
+class ThisClassDemo {
+  fn() {
+    const value = "123";
+    console.log("inside fn: ", this);
+
+    setTimeout(() => {
+      console.log("inside fn and then setTimeout: ", this, value);
+    }, 0);
+  }
+}
+
+const thisClassDemoInstance = new ThisClassDemo();
+thisClassDemoInstance.fn();
+
+// inside fn: {}
+// inside fn and then setTimeout: {} '123'
+```
