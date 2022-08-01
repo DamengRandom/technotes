@@ -886,4 +886,10 @@ what can do:
 
 <b>41.</b> `Eventbus` in JS: is a `publisher / subscriber` pattern, can be used for `decoupling` the components of an application, which means a component can react to events fired from another component without them having direct dependencies with each other. <a href="https://pineco.de/creating-a-javascript-event-bus/" target="_blank">A Quick Reference</a>
 
-<b>42.</b>
+<b>42.</b> Garbage Collector
+
+What? is a background process in the JavaScript engine that identifies unreachable objects, removes them, and reclaims the underlying memory
+
+<a href="https://www.ditdot.hr/en/causes-of-memory-leaks-in-javascript-and-how-to-avoid-them" target="_blank">Reference</a>
+
+<b>43.</b>
