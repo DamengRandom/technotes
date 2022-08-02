@@ -9,4 +9,14 @@ function thisFn() {
 }
 
 thisFn(); // Window object
+
+// object literal
+
+const thisObject = {
+  insideFn() {
+    console.log("object this: ", this);
+  },
+};
+
+thisObject.insideFn(); // { insideFn: insideFn() }
 ```
