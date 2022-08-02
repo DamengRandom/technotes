@@ -121,6 +121,11 @@ module.exports = {
         collapsable: false,
       },
       {
+        title: `JavaScript this`,
+        path: "/_posts/js-this",
+        collapsable: false,
+      },
+      {
         title: `Code Practices (Mostly JavaScript)`,
         path: "/_posts/just-code",
         collapsable: false,
