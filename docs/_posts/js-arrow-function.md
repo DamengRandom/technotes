@@ -114,4 +114,22 @@ thisClassDemoInstance.fn();
 
 // inside fn: {}
 // inside fn and then setTimeout: {} '123'
+
+// normal function `this` inside a class
+
+class ThisClassDemo {
+  fn() {
+    const value = "123";
+    console.log("inside fn: ", this);
+
+    setTimeout(function() {
+      console.log("inside fn and then setTimeout: ", this, value);
+    }, 0);
+  }
+}
+
+const thisClassDemoInstance = new ThisClassDemo();
+thisClassDemoInstance.fn();
+// inside fn: {}
+// inside fn and then setTimeout: Window object '123'
 ```
