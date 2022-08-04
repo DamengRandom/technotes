@@ -285,4 +285,6 @@ Object.prototype.toString.call({ x: "123, y: 123123" }); // '[object Object]'
 
 <b>43.</b> `Yarn` support offline mode which means if the package s you have installed before, after network dropped out, the package can be installed by using yarn offline !!
 
-<b>44.</b>
+<b>44.</b> one of the best features for Webpack 5 is module federation, allow developers to build micro front-end apps easily.
+
+<b>45.</b>
