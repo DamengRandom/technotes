@@ -252,7 +252,7 @@ CI (Continuous Integration): Merge code in
 <br />
 CD (Continuous Development): Release code out
 
-<b>30.</b> JavaScript `defer` attribute is used to specify that the script is executed when the page has finished parsing.
+<b>30.</b> JavaScript `defer` attribute is used to specify the script is downloaded in parallel to parse the page, and executed after the page has finished parsing.
 
 <b>31.</b> What is DOM? DOM is a programming interface, could be HTML document
 

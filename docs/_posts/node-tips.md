@@ -1,5 +1,9 @@
 ### NodeJS Recall Tips
 
+Node JS concept:
+
+It is an open-souce JavaScript runtime envrionment which is built on Chrome V8 JavaScript engine which allow javascript code to run on server
+
 <b>1.</b> Dependency Injection
 
 In NodeJS, Dependency Injection (DI) is a common design pattern for your codebase, normally we consider to use DI when we want to make our life easier as developer, especially deal with unit tests, so we only mock it locally, eg: we don't need to make a real / remote API call from other servers, we can do it internally with DI concept.
