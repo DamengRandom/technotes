@@ -19,4 +19,15 @@ const thisObject = {
 };
 
 thisObject.insideFn(); // { insideFn: insideFn() }
+
+// class
+class ThisClass {
+  method() {
+    console.log("class this: ", this);
+  }
+}
+
+const thisClassInstance = new ThisClass();
+
+thisClassInstance.method(); // empty object {}
 ```
