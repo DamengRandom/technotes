@@ -1,5 +1,15 @@
 ### React general tips
 
+#### Virtual DOM?
+
+What? Copy/mirror the existing DOM tree, and based on `diff` algorithm (After React 16, `Fiber` is a new reconcilation engine) to compare the difference between mirror dom tree and orginal dom tree, and if difference found, update it from mirror dom tree to original dom tree (Get related opart of components re-rendered).
+
+I remember in React 18, `bacthing` concept has been introduced which prevent unncessary re-renderings.
+
+Why? To enhance the web page performance, because virtual dom only update the specific node(s) instead of updating the etnmire DOM tree ..
+
+<a href="https://tonyfreed.medium.com/what-is-virtual-dom-c0ec6d6a925c" target="_blank">Reference</a>
+
 #### Make API call inside componentDidMount method instead of componentWillMount method:
 
 Explanation:
