@@ -892,4 +892,10 @@ What? is a background process in the JavaScript engine that identifies unreachab
 
 <a href="https://www.ditdot.hr/en/causes-of-memory-leaks-in-javascript-and-how-to-avoid-them" target="_blank">Reference</a>
 
-<b>43.</b>
+<b>43.</b> HTTP content-type header
+
+`x-www-form-urlencoded`: only allow develoeprs to upload string typed data (send the data by key-value paires)
+
+`form-data`: allow developers to upload file typed data, also support string based data (send the data by chunks)
+
+Both of them are used for sending form data as POST request
