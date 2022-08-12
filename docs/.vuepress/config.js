@@ -49,6 +49,11 @@ module.exports = {
         collapsable: false,
       },
       {
+        title: `JavaScript: call, bind & apply Function`,
+        path: "/_posts/js-call-bind-apply",
+        collapsable: false,
+      },
+      {
         title: `JavaScript: Callback - Promise - Async Await`,
         path: "/_posts/js-callback-promise-async-await",
         collapsable: false,
