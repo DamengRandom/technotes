@@ -268,3 +268,28 @@ obj1.foo(); // "obj1"
 foo.call(obj2); // "obj2"
 new foo(); // undefined
 ```
+
+<b>11.</b> `++x`
+
+```js
+var x = 0;
+
+switch (++x) {
+  case 0:
+    ++x;
+    console.log("0: ", x);
+  case 1:
+    ++x;
+    console.log("1: ", x);
+  case 5:
+    ++x;
+    console.log("5: ", x);
+}
+
+console.log(x);
+// 1: 2
+// 5: 3
+// 3
+```
+
+<b>12.</b>
