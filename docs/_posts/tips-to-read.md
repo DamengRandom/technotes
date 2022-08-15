@@ -47,4 +47,6 @@
 
 <b>23.</b> <a href="https://www.freecodecamp.org/news/codebyte-why-are-explicit-semicolons-important-in-javascript-49550bea0b82/" target="_blank">Why we need semicolons in JavaScript</a>
 
-<b>24.</b> <a href="" target="_blank"></a>
+<b>24.</b> <a href="https://betterprogramming.pub/21-best-practices-for-a-clean-react-project-df788a682fb" target="_blank">Best practices for a clean react project</a>
+
+<b>25.</b> <a href="" target="_blank"></a>
