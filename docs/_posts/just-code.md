@@ -1040,3 +1040,24 @@ Object.defineProperty(obj, "name", { writable: true, value: "new_value" });
 
 console.log(obj); // { name: 'new_value' }
 ```
+
+<b>28.</b> Better Coding by using FUNCTION (rethink about it - Year 2022)
+
+```js
+let numbers = [1, 2, 3];
+let sum = numbers.reduce((acc, cur) => acc + cur, 0);
+console.log(`Sum result for now: ${sum}`);
+numbers = [...numbers, 4];
+sum = numbers.reduce((acc, cur) => acc + cur, 0);
+console.log(`Sum result after new added element: ${sum}`);
+```
+
+Better version:
+
+```js
+const numbers = [1, 2, 3];
+const sum = () => numbers.reduce((acc, cur) => acc + cur, 0);
+console.log(`Sum result for now: ${sum()}`);
+numbers.push(4);
+console.log(`Sum result after new added element: ${sum()}`);
+```
