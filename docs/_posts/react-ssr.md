@@ -10,9 +10,11 @@ Advantage:
 
 React itself is isomorphic (universal) which means it doesn't contain any browser specific code, just the JavaScript can run both on the browser and the server.
 
-`Isomorphism` for web development means rendering web pages on both the server and client side.
+`Isomorphism` for web development means rendering web pages on both the server and client side, or the code can be run on bother server and client side.
 
 `Isomorphic React`: means server renders the initial HTML for the client using React components and `React.renderToString()`. (Purpose: to avoid FOUC issue occurs)
+
+Why `isomorphic`: seeking for better SEO, better performance and better maintainability ~~
 
 Using `renderToString` function to generate the static markup HTML code later rendering at browser side
 (Don't forget we introduce building (code compiling) systems like `babel` for converting JSX, ES6 code to be like readable JavaScript code)
