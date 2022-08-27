@@ -188,6 +188,11 @@ module.exports = {
         collapsable: false,
       },
       {
+        title: `Serverless things`,
+        path: "/_posts/serverless",
+        collapsable: false,
+      },
+      {
         title: `Software Development: Solid Principles`,
         path: "/_posts/solid-principles",
         collapsable: false,
