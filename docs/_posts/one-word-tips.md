@@ -287,4 +287,6 @@ Object.prototype.toString.call({ x: "123, y: 123123" }); // '[object Object]'
 
 <b>44.</b> one of the best features for Webpack 5 is module federation, allow developers to build micro front-end apps easily.
 
-<b>45.</b>
+<b>45.</b> Using `tslib` for performance consideration, smaller bundler size, better performance ~~
+
+<b>46.</b>
