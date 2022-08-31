@@ -295,4 +295,19 @@ Allow single thread processes multiple request at the same time. (More efficient
 
 <a href="https://bytearcher.com/articles/blocking-vs-non-blocking-in-node.js/#:~:text=A%20non%2Dblocking%20call%20in,these%20mechanisms%20into%20JavaScript%20callbacks." target="_blank">Reference</a>
 
-<b>10.</b>
+<b>10.</b> URL module in Node: Split up a web address into readable parts, eg:
+
+```js
+var url = require("url");
+var adr = "http://localhost:8080/default.htm?year=2021&month=september";
+var q = url.parse(adr, true);
+
+console.log(q.host); //returns 'localhost:8080'
+console.log(q.pathname); //returns '/default.htm'
+console.log(q.search); //returns '?year=2021&month=september'
+
+var qdata = q.query; //returns an object: { year: 2021, month: 'september' }
+console.log(qdata.month); //returns 'september'
+```
+
+<b>11.</b>
