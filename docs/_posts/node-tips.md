@@ -310,4 +310,6 @@ var qdata = q.query; //returns an object: { year: 2021, month: 'september' }
 console.log(qdata.month); //returns 'september'
 ```
 
-<b>11.</b>
+<b>11.</b> In NodeJS, a way of making http request: using `const https = require('https');`
+
+<b>12.</b>
