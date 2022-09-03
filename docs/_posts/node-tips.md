@@ -312,4 +312,6 @@ console.log(qdata.month); //returns 'september'
 
 <b>11.</b> In NodeJS, a way of making http request: using `const https = require('https');`
 
-<b>12.</b>
+<b>12.</b> NodeJs runtime environment: is an environment which your application is running in
+
+<b>13.</b>
