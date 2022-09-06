@@ -316,4 +316,18 @@ console.log(qdata.month); //returns 'september'
 
 <b>13.</b> Please read event loop for NodeJS: <a href="https://github.com/learning-zone/nodejs-interview-questions#q-how-do-nodejs-works" target="_blank">How NodeJS works?</a>
 
-<b>14.</b>
+<b>14.</b> NodeJS Error handlings:
+
+2 types of errors:
+
+- operational errors:
+  - fail to connect with the server
+  - request timeout
+  - socket hang up
+  - user invalid input
+- programmer errors:
+  - did not catch a rejected promise
+  - pass an object where a string is required
+  - forget to do the garbage collection
+
+<b>15.</b>
