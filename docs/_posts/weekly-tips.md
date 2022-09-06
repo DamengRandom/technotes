@@ -899,3 +899,12 @@ What? is a background process in the JavaScript engine that identifies unreachab
 `form-data`: allow developers to upload file typed data, also support string based data (send the data by chunks)
 
 Both of them are used for sending form data as POST request
+
+<b>43.</b> Inversion of control: is a programming principle which originally coming from OOP (Object Oriented Programming).
+
+Purpose: Inversion of control is used to increase modularity of the program and make it extensible
+
+<a href="https://en.wikipedia.org/wiki/Inversion_of_control" target="_blank">Concept Reference</a>
+<a href="https://en.wikipedia.org/wiki/Inversion_of_control" target="_blank">React Reference</a>
+
+<b>44.</b>
