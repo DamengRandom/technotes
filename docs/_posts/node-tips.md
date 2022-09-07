@@ -330,4 +330,11 @@ console.log(qdata.month); //returns 'september'
   - pass an object where a string is required
   - forget to do the garbage collection
 
-<b>15.</b>
+<b>15.</b> NodeJS error object:
+
+```js
+const errorObject = new Error("Error message");
+console.log(error.stack); // point where the error occurred
+
+<b>16.</b>;
+```
