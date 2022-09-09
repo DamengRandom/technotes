@@ -330,11 +330,33 @@ console.log(qdata.month); //returns 'september'
   - pass an object where a string is required
   - forget to do the garbage collection
 
-<b>15.</b> NodeJS error object:
+<b>15.</b> NodeJS error `stack`:
 
 ```js
 const errorObject = new Error("Error message");
 console.log(error.stack); // point where the error occurred
-
-<b>16.</b>;
 ```
+
+<b>16.</b> Common ways to do error handlings in NodeJS:
+
+1. using `try { ... } catch (error) { ... }`
+
+for example:
+
+```js
+const asyncTask = async () => {
+  try {
+    const t1 = await task1();
+    const t2 = await task2();
+
+    return [...t1, ...t2];
+  } catch (error) {
+    console.lot(error);
+  } finally {
+    // if has something need to clean up
+    await cleanup();
+  }
+};
+```
+
+<b>17.</b>
