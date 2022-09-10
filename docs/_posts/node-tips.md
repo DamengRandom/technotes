@@ -339,7 +339,7 @@ console.log(error.stack); // point where the error occurred
 
 <b>16.</b> Common ways to do error handlings in NodeJS:
 
-1. using `try { ... } catch (error) { ... }`
+1). using `try { ... } catch (error) { ... }`
 
 for example:
 
@@ -358,5 +358,9 @@ const asyncTask = async () => {
   }
 };
 ```
+
+2). using `process.on('uncaughtException, callback)`:
+
+This is a good way to capture the uncaughtException (programmer typed) errors
 
 <b>17.</b>
