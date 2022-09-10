@@ -363,4 +363,20 @@ const asyncTask = async () => {
 
 This is a good way to capture the uncaughtException (programmer typed) errors
 
+3). using `middleware`
+
+For example:
+
+```js
+// middleware error handling example
+const erorrHandler = (error, req, res, next) => {
+  console.log(`Error: ${error.message}`);
+  const status = error.status || 400;
+  res.status(status).send({ error: error.message });
+};
+
+// use the middleware
+app.use(erorrHandler);
+```
+
 <b>17.</b>
