@@ -379,4 +379,12 @@ const erorrHandler = (error, req, res, next) => {
 app.use(erorrHandler);
 ```
 
+4). using `Logging` system (eg: `winston` + `morgan`) to log all the errors either to a log file or to cloud to store all the error messages
+
+To sum up: (The most important conceptual steps !!)
+
+Step 1: create your own error handler class
+Step 2: write all the error handler functions and ensure its all re-usable
+Step 3: using some logging tools to minitor the errors inside your node app
+
 <b>17.</b>
