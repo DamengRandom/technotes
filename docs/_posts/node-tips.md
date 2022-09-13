@@ -379,6 +379,8 @@ const erorrHandler = (error, req, res, next) => {
 app.use(erorrHandler);
 ```
 
+<a href="https://www.becomebetterprogrammer.com/how-to-use-error-handler-middleware-with-express-js-and-typescript/" target="_blank">Reference</a>
+
 4). using `Logging` system (eg: `winston` + `morgan`) to log all the errors either to a log file or to cloud to store all the error messages
 
 To sum up: (The most important conceptual steps !!)

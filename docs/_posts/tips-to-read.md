@@ -51,4 +51,6 @@
 
 <b>25.</b> <a href="https://www.interviewbit.com/css-interview-questions/" target="_blank">CSS Interview Questions</a>
 
-<b>26.</b> <a href="" target="_blank"></a>
+<b>26.</b> <a href="https://blog.logrocket.com/escape-memory-leaks-javascript/">Common JS memory leak issues</a>
+
+<b>27.</b> <a href="" target="_blank"></a>
