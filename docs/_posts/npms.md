@@ -111,3 +111,9 @@ Step 5: create a simple package.json file inside library folder, like this
 Step 6: Run `npm install` command to install your latest local changes package !! (PLESE REMEMBER THIS STEP !!!!!)
 
 Now, you can run application A, the library B with latest local changes should be available when you run application A.
+
+8). `npm trends`
+
+`npm trends` a good tool for demo to team which npm package is better !!
+
+9).
