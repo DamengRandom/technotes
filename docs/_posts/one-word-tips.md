@@ -289,4 +289,6 @@ Object.prototype.toString.call({ x: "123, y: 123123" }); // '[object Object]'
 
 <b>45.</b> Using `tslib` for performance consideration, smaller bundler size, better performance ~~
 
-<b>46.</b>
+<b>46.</b> `web.dev`: a new tool to measure your code, alternative for `lighthouse`
+
+<b>47.</b>
