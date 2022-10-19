@@ -389,4 +389,62 @@ Step 1: create your own error handler class
 Step 2: write all the error handler functions and ensure its all re-usable
 Step 3: using some logging tools to minitor the errors inside your node app
 
-<b>17.</b>
+<b>17.</b> NodeJS error handlings code peices (Recall only)
+
+```js
+const express = require("express");
+const axios = require("axios");
+const app = express();
+
+// express way (expresss API) to handle errors
+app.get("/expresshandler", (req, res) => {
+  // res.send("response for request");
+  let error = new Error(`Error occurred at ${req.url}`);
+  error.statusCode = 400;
+  // error.message = `Error occurred at ${req.url}`;
+  throw error;
+  // res.status(400).send({ error: error.message });
+});
+
+// try catch way of handling errors
+app.get("/asyncerror", async (req, res, next) => {
+  try {
+    throw new Error("Error occurred (async function demo) ...");
+  } catch (error) {
+    next(error);
+  }
+});
+
+// middleware error handling example
+const erorrHandler = (error, req, res, next) => {
+  console.log(`Error: ${error.message}`);
+  const status = error.status || 400;
+  res.status(status).send({ error: error.message });
+};
+
+const invalidPathHandler = (request, response, next) => {
+  response.status(404);
+  response.send({ error: "invalid path" });
+};
+
+app.get("/products", async (req, res, next) => {
+  try {
+    const apiResponse = await axios.get("http://localhost:3001/products");
+    const jsonResponse = apiResponse.data;
+
+    res.send(jsonResponse);
+  } catch (error) {
+    next(error);
+  }
+});
+
+// we can add more than 1 middlware for handling different errors ~~
+app.use(erorrHandler);
+app.use(invalidPathHandler);
+
+app.listen(3829, () => {
+  console.log("Server is up ..");
+});
+```
+
+<b>18.</b>
