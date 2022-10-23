@@ -907,4 +907,24 @@ Purpose: Inversion of control is used to increase modularity of the program and 
 <a href="https://en.wikipedia.org/wiki/Inversion_of_control" target="_blank">Concept Reference</a>
 <a href="https://en.wikipedia.org/wiki/Inversion_of_control" target="_blank">React Reference</a>
 
-<b>44.</b>
+<b>44.</b> `new.target` in JS
+
+to detect whether class or function has been called by using the `new` operator
+
+example:
+
+```js
+function Called() {
+  if (!new.target) throw new Error("Called() must be called with new !!");
+}
+
+try {
+  Called();
+} catch (error) {
+  console.log(error); // Called() must be called with new !!
+}
+```
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target" target="_blank">reference</a>
+
+<b>45.</b>
