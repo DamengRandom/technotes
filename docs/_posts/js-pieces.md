@@ -58,3 +58,5 @@ const truthyArray = array.filter(Boolean);
 
 truthyArray; // [{good: 'good'}, {great: 'great'}]
 ```
+
+5).

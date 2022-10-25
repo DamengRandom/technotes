@@ -7,7 +7,7 @@ const { arguments } = require("file-loader");
 
 // ES6 Class way of greeting functionality: ClassGreeting
 class ClassGreeting {
-  constructor(word = 'Aloha', name = 'Damon') {
+  constructor(word = "Aloha", name = "Damon") {
     this.word = word;
     this.name = name;
   }
@@ -21,22 +21,21 @@ const greetingInstanceForClass = new ClassGreeting();
 console.log(greetingInstanceForClass.greeting());
 
 // How to achieve class functionality by using prototype in JavaScript: PrototypeGreeting
-function PrototypeGreeting(word = 'Hi', name = 'Ella') {
+function PrototypeGreeting(word = "Hi", name = "Ella") {
   this.word = word;
   this.name = name;
 }
 
 PrototypeGreeting.prototype.greeting = function() {
   return `${this.word}, ${this.name}`;
-}
+};
 
-const greetingInstanceForProtoType = new PrototypeGreeting('Hello', 'Stranger');
+const greetingInstanceForProtoType = new PrototypeGreeting("Hello", "Stranger");
 console.log(greetingInstanceForProtoType.greeting());
-
 
 // You can understand the way of JavaScript for creating class constructor method is like this:
 
-function PrototypeGreeting(word = 'Hi', name = 'Ella') {
+function PrototypeGreeting(word = "Hi", name = "Ella") {
   this.word = word;
   this.name = name;
 }
@@ -45,7 +44,7 @@ function PrototypeGreeting(word = 'Hi', name = 'Ella') {
 
 PrototypeGreeting.prototype.greeting = function() {
   return `${this.word}, ${this.name}`;
-}
+};
 
 // From this example, one word: it proves the class can be treated as an object in JavaScript
 ```
@@ -56,18 +55,18 @@ Reference: <a href="https://www.toptal.com/javascript/es6-class-chaos-keeps-js-d
 
 ```js
 function Person() {
-  this.name = 'Damon';
+  this.name = "Damon";
   return this;
 }
 
 Person.prototype.getName = function() {
   return this.name;
-}
+};
 
 class PersonClass extends Person {
   constructor() {
     super();
-    this.name = 'Damon (From Class)';
+    this.name = "Damon (From Class)";
   }
 }
 
@@ -76,22 +75,44 @@ const personClassInstance = new PersonClass();
 console.log(personClassInstance.getName()); // Damon (From Class)
 
 Person.prototype.getName = function() {
-  return 'Overridden in Person';
-}
+  return "Overridden in Person";
+};
 
 console.log(personClassInstance.getName()); // Overridden in Person
 
 PersonClass.prototype.getName = function() {
-  return 'Overridden in PersonClass';
-}
+  return "Overridden in PersonClass";
+};
 
 console.log(personClassInstance.getName()); // 'Overridden in PersonClass'
 
 personClassInstance.getName = function() {
-  return 'Overridden in person class instance';
-}
+  return "Overridden in person class instance";
+};
 
 console.log(personClassInstance.getName()); // Overridden in person class instance
 ```
 
-<b>3.</b>
+<b>3.</b> What is `setPrototypeOf()`:
+
+Example:
+
+```js
+var Animal = {
+  speak() {
+    console.log(this.name + " makes a nosie ..");
+  },
+};
+
+class Dog {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+Object.setPrototypeOf(Dog.prototype, Animal); // Dog.prototype is the "target" object, and Animal is the "source" object
+
+var d = new Dog("Haski");
+
+d.speak(); // Haski makes a nosie ..
+```
