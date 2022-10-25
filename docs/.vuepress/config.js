@@ -176,6 +176,11 @@ module.exports = {
         collapsable: false,
       },
       {
+        title: `React: ZuStand`,
+        path: "/_posts/react-zustand",
+        collapsable: false,
+      },
+      {
         title: `React: Redux 101`,
         path: "/_posts/redux-tips",
         collapsable: false,
