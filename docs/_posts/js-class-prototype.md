@@ -116,3 +116,9 @@ var d = new Dog("Haski");
 
 d.speak(); // Haski makes a nosie ..
 ```
+
+Explanantion:
+
+The reason for calling `Object.setPrototypeOf` is to make sure that any objects created by the `Dog` constructor will get the `Animal` object in their prototype chain.
+
+<b>4.</b>
