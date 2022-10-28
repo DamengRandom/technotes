@@ -447,4 +447,33 @@ app.listen(3829, () => {
 });
 ```
 
-<b>18.</b>
+<b>18.</b> What is `Error.captureStackTrace()`:
+
+For instance:
+
+```js
+const fun1 = () => {
+  fun2();
+};
+const fun2 = () => {
+  fun3();
+};
+const fun3 = () => {
+  log_stack();
+};
+function log_stack() {
+  let err = {};
+  Error.captureStackTrace(err);
+  console.log(err.stack);
+}
+fun1();
+
+// Error
+//     at log_stack (<anonymous>:6:11)
+//     at fun3 (<anonymous>:3:22)
+//     at fun2 (<anonymous>:2:22)
+//     at fun1 (<anonymous>:1:22)
+//     at <anonymous>:9:1
+```
+
+<b>19.</b>
