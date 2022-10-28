@@ -476,4 +476,7 @@ fun1();
 //     at <anonymous>:9:1
 ```
 
+Explanantion: As you can see, the error stack will call each level of the related functions (from bottom to top)
+Also reflects the location of the specific error (Easier for developer to do som debuggings)
+
 <b>19.</b>
