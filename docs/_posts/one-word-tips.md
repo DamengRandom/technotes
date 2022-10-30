@@ -291,4 +291,8 @@ Object.prototype.toString.call({ x: "123, y: 123123" }); // '[object Object]'
 
 <b>46.</b> `web.dev`: a new tool to measure your code, alternative for `lighthouse`
 
-<b>47.</b>
+<b>47.</b> Micro Front-end (MFE): is the client version of microservices (divide web application on client side)
+
+MicroServices (MS): create multiple service functionalities for back-end codebase (divide one monolithic codebase into small modules, each module can be treated as a micro-service)
+
+<b>48.</b>
