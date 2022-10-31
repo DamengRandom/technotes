@@ -295,4 +295,6 @@ Object.prototype.toString.call({ x: "123, y: 123123" }); // '[object Object]'
 
 MicroServices (MS): create multiple service functionalities for back-end codebase (divide one monolithic codebase into small modules, each module can be treated as a micro-service)
 
-<b>48.</b>
+<b>48.</b> NPM is used to install the packages while NPX is used to execute the packages. (NPX is an NPM package executor)
+
+<b>49.</b>
