@@ -121,4 +121,19 @@ Explanantion:
 
 The reason for calling `Object.setPrototypeOf` is to make sure that any objects created by the `Dog` constructor will get the `Animal` object in their prototype chain.
 
-<b>4.</b>
+<b>4.</b> How class convert to es5 syntax:
+
+```js
+// From
+
+class Foo {
+  bar() {}
+}
+
+// to
+
+function Foo2() {}
+Foo2.prototype.Bar = function() {};
+```
+
+<b>5.</b>
