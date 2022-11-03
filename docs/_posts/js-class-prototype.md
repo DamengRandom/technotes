@@ -136,4 +136,27 @@ function Foo2() {}
 Foo2.prototype.Bar = function() {};
 ```
 
-<b>5.</b>
+<b>5.</b> `instanceof` type guard
+
+```js
+class Foo {
+bar() {}
+}
+
+const bar = new Foo();
+
+console.log(Object.getPrototypeOf(bar) === Foo.prototype); // true
+
+Object.getPrototypeOf(bar);
+
+<!-- {constructor: ƒ, bar: ƒ}
+bar: ƒ bar()
+constructor: class Foo
+[[Prototype]]: Object -->
+
+// Thus, we can use instanceof method for the class based functions
+
+console.log(bar instanceof Foo); // true
+```
+
+<b>6.</b>
