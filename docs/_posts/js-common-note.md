@@ -836,3 +836,17 @@ const dosSomething = () => {
 window.addEventListener("click", dosSomething);
 window.removeEventListener("click", dosSomething);
 ```
+
+<b>26.</b> Memory leak issue in JS:
+
+What? Memory is no longer required by an application that for some reason not returned to operating system or the pool of free memory
+
+Consequences? Could cause app crashed, slowdown and high latenecy issues
+
+Types?
+
+- Accidential global variables (eg: defint a variable `x = 1;` Actually, `x` is `global` variable, thats why we need to use either `var` or `let`)
+- Forgotten timers or callbacks (eg: forgot to run `clearInterval` after `setInterval` runs)
+- Event listeners, example case:
+
+<b>27.</b>
