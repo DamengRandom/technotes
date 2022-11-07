@@ -849,4 +849,13 @@ Types?
 - Forgotten timers or callbacks (eg: forgot to run `clearInterval` after `setInterval` runs)
 - Event listeners, example case:
 
+```js
+const hugeString = new Array(100000).join("x");
+
+document.addEventListener("keyup", function() {
+  // anonymous inline function - can't remove it
+  doSomething(hugeString); // hugeString is now forever kept in the callback's scope
+});
+```
+
 <b>27.</b>

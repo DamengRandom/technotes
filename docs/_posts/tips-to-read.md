@@ -53,6 +53,6 @@
 
 <b>26.</b> <a href="https://blog.logrocket.com/escape-memory-leaks-javascript/">Common JS memory leak issues</a>
 
-<b>27.</b> <a href="https://github.com/learning-zone/nodejs-interview-questions#q-what-is-nodejs" target="_blank">what is NodeJS</a>
+<b>27.</b> <a href="https://github.com/learning-zone/nodejs-interview-questions#q-what-is-nodejs" target="_blank">What is NodeJS</a>
 
 <b>28.</b> <a href="" target="_blank"></a>
