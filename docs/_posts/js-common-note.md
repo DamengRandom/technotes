@@ -858,4 +858,17 @@ document.addEventListener("keyup", function() {
 });
 ```
 
+How to fix it?
+
+```js
+function listener() {
+  doSomething(hugeString);
+}
+
+document.addEventListener("keyup", listener);
+document.removeEventListener("keyup", listener); // got remove after used ...
+```
+
+How? Using Chrome memory profling tool to check mmeory leak issues for the web application
+
 <b>27.</b>
