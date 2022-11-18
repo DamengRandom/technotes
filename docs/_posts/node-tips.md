@@ -479,4 +479,10 @@ fun1();
 Explanantion: As you can see, the error stack will call each level of the related functions (from bottom to top)
 Also reflects the location of the specific error (Easier for developer to do som debuggings)
 
-<b>19.</b>
+<b>19.</b> Node JS tips for interview:
+
+(0). What is NodeJS:
+
+Node.js is an open-source server side runtime environment built on Chrome's V8 JavaScript engine. It provides an event driven, non-blocking (asynchronous) I/O and cross-platform runtime environment for building highly scalable server-side applications using JavaScript.
+
+<b>20.</b>
