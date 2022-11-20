@@ -489,4 +489,10 @@ Node.js is an open-source server side runtime environment built on Chrome's V8 J
 
 NodeJS run in a `single process` and application code run in a `single thread` which cost less resources (better performance). Althpugh NodeJS is single threaded, each of I/O requests will be handled `asynchrounously` which means single thread does not need to wait the request to complete before handling the next request.
 
+(2). NodeJS has one more type JavaScript does not have which is `Buffer`, Buffer is mainly used for storing the binary data, when reading a file or receing some packets from network.
+
+```js
+var buffer = new Buffer(string, [encoding]);
+```
+
 <b>20.</b>
