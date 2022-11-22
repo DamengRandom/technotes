@@ -510,4 +510,10 @@ var qdata = q.query; //returns an object: { year: 2021, month: 'september' }
 console.log(qdata.month); //returns 'september'
 ```
 
+(4). What is NodeJS runtime mean?
+
+Step 1: Runtime is just an environment your application is running in
+
+Step 2: NodeJS runtime is a software stack which is responsible for installing the web services code and its dependencies and run the web services.
+
 <b>20.</b>
