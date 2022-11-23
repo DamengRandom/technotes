@@ -516,4 +516,22 @@ Step 1: Runtime is just an environment your application is running in
 
 Step 2: NodeJS runtime is a software stack which is responsible for installing the web services code and its dependencies and run the web services.
 
+(5). How NodeJS work?
+
+Step 1: Clients send request to server
+
+Step 2: NodeJS server starts preparing `a thread pool` for providing services in order to handle the client requests
+
+Step 3: NodeJS server receives requests and put requests into `event queue`.
+
+Step 4: NodeJS uses its own component `event loop` to handle the requests by checking the `event queue`.
+
+Step 5: If event queue has no tasks, waiting until it has some, else, event loop starts handling requests.
+
+Step 5.5 If requests does not need any blocking I/O operations, the handling process will be asynchronous, which means requests can be handled at teh same time without any waiting. Else, handle the request step by step.
+
+Step 6: After handled the reuqests, will send th response back to client side.
+
+<a href="https://www.geeksforgeeks.org/explain-the-working-of-node-js/#:~:text=It%20is%20a%20used%20as,fast%2C%20and%20data%2Dintensive." target="_blank">Check the flow diagram !!</a>
+
 <b>20.</b>
