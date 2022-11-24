@@ -534,4 +534,15 @@ Step 6: After handled the reuqests, will send th response back to client side.
 
 <a href="https://www.geeksforgeeks.org/explain-the-working-of-node-js/#:~:text=It%20is%20a%20used%20as,fast%2C%20and%20data%2Dintensive." target="_blank">Check the flow diagram !!</a>
 
+(6). What is error-first callback in NodeJS? (Please remember a good practice is always check the error first ~~)
+
+```js
+fs.readFile("file.json", function(err, data) {
+  if (err) {
+    console.error(err);
+  }
+  console.log(data);
+});
+```
+
 <b>20.</b>
