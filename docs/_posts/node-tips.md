@@ -545,4 +545,6 @@ fs.readFile("file.json", function(err, data) {
 });
 ```
 
+(7). `Eslint` can be used for keeping code styling cosnistent
+
 <b>20.</b>
