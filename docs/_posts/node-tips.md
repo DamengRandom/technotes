@@ -547,4 +547,6 @@ fs.readFile("file.json", function(err, data) {
 
 (7). `Eslint` can be used for keeping code styling cosnistent
 
+(8). How can we secure HTTP cookies in order to prevent XSS attack? Answer: using `HttpOnly` attribute, eg: `Set-Cookie: [name]=[value]; HttpOnly`
+
 <b>20.</b>
