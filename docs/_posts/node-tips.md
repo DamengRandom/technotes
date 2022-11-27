@@ -549,4 +549,11 @@ fs.readFile("file.json", function(err, data) {
 
 (8). How can we secure HTTP cookies in order to prevent XSS attack? Answer: using `HttpOnly` attribute, eg: `Set-Cookie: [name]=[value]; HttpOnly`
 
+(9). Node comes with REPL (Read, Eval, Print, Loop) computer environment, similar to Shell (Liunx/Unix) and command prompt.
+
+- Read: Read the user input and parse it to JavaScript data structure
+- Eval: The parsed JavaScript structure is evaluated for the results
+- Print: The result will be printed after evalution process
+- Loop: Loop the input command
+
 <b>20.</b>
