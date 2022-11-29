@@ -556,4 +556,6 @@ fs.readFile("file.json", function(err, data) {
 - Print: The result will be printed after evalution process
 - Loop: Loop the input command
 
+(10). Difference between Asychronous and Non-blocking: Asychrnous does not respond immediately, but Non-blocking does respond immediately if the data is available and not simply returns an error !!!!
+
 <b>20.</b>
