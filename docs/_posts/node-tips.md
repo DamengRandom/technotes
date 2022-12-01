@@ -601,4 +601,11 @@ console.log(eventListeners + " Listener(s) listening to connection event");
 console.log("Program Ended.");
 ```
 
+(13). Read & Write a stream
+
+- fs.createReadStream('input.txt')
+- fs.createWriteStream('output.txt')
+
+<a href="https://github.com/learning-zone/nodejs-interview-questions#q-how-many-types-of-streams-are-present-in-nodejs" target="_blank">Reference</a>
+
 <b>20.</b>
