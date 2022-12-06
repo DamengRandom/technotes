@@ -653,4 +653,12 @@ if (response.error) {
 }
 ```
 
+(16). `uncaughtException` in NodeJS:
+
+```js
+process.on("uncaughtException", function(err) {
+  console.log("Caught exception: " + err);
+});
+```
+
 <b>20.</b>
