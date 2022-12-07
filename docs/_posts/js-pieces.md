@@ -60,3 +60,38 @@ truthyArray; // [{good: 'good'}, {great: 'great'}]
 ```
 
 5).
+
+`flatMap(data)`:
+
+Example:
+
+```js
+const badArray = [
+  "Dog Soliders",
+  ["In Bruges", "From Paris with Love", "Layer Cake"],
+  "The Big Lebowski",
+  "",
+  "       ",
+  "Mmemto, The paltform,Fight Club, ",
+  "Hotel Rwanda, Moon, Under the Skin",
+  "Lady Bird",
+  ["Platoon", "Wall-E"],
+];
+
+const goodArray = badArray.flatMap((data) => {
+  if (Array.isArray(data)) {
+    return data;
+  } else if (typeof data === "string" && data.trim() === "") {
+    return [];
+  } else {
+    return data
+      .split(",")
+      .map((d) => d.trim())
+      .filter((d) => d !== "");
+  }
+});
+
+console.log("flatten example 01: ", goodArray);
+```
+
+6).

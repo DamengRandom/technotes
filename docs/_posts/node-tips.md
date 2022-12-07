@@ -663,4 +663,6 @@ process.on("uncaughtException", function(err) {
 
 (17). JIT (Just In Time) Compiler in NodeJS: NodeJS relies on V8 (JS engine) to excute its code, and one of core peices of V8 is using JIT to execute JS at higher speed (One advantage of using NodeJS is less CPU cost)
 
+(18). Difference between PUT and PATCH: PUT requires developer to send the `full` payload as request, but PATCH `only` requires developers to send the only attributes which need to be updated as request
+
 <b>20.</b>
