@@ -95,3 +95,60 @@ console.log("flatten example 01: ", goodArray);
 ```
 
 6).
+
+another `flatMap(data)` recursive loop example:
+
+```js
+const nestedChildren = [
+  {
+    name: "test1",
+    children: [
+      { id: 11, hun: true },
+      {
+        id: 12,
+        hun: false,
+        children: [
+          { nestId: 111, zi: false },
+          { nestId: 112, zi: true },
+        ],
+      },
+    ],
+  },
+  {
+    name: "test2",
+  },
+  {
+    name: "test3",
+    children: [
+      { id: 31, hun: true },
+      { id: 32, hun: false },
+      { id: 33, hun: false },
+    ],
+  },
+  {
+    name: "test4",
+  },
+];
+
+const flattenNestedArray = (nestedChildren) =>
+  nestedChildren.flatMap((data) => {
+    let current = [];
+
+    if (Array.isArray(data?.children)) {
+      current = [...data?.children, ...flattenNestedArray(data?.children)];
+      current.map((c) => {
+        if (c?.children) delete c.children;
+
+        return c;
+      });
+
+      return current;
+    }
+
+    return [];
+  });
+
+console.log("flatten example 02: ", flattenNestedArray(nestedChildren));
+```
+
+7).
