@@ -665,4 +665,6 @@ process.on("uncaughtException", function(err) {
 
 (18). Difference between PUT and PATCH: PUT requires developer to send the `full` payload as request, but PATCH `only` requires developers to send the only attributes which need to be updated as request
 
+(19). About NodeJS `child_process` module: please read <a href="https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/" target="_blank">this article</a>
+
 <b>20.</b>
