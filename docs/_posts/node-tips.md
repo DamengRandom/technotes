@@ -667,4 +667,6 @@ process.on("uncaughtException", function(err) {
 
 (19). About NodeJS `child_process` module: please read <a href="https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/" target="_blank">this article</a>
 
+(20). Is NodeJS entirely based on a single-thread? Answer: Yes, its true, NodeJS processes all requests from a single thread. Meanwhile, it is also worth to be memorized that NodeJS makes use of events and callbacks to handle number of requests asynchronously.
+
 <b>20.</b>
