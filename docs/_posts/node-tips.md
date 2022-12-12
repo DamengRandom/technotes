@@ -669,4 +669,19 @@ process.on("uncaughtException", function(err) {
 
 (20). Is NodeJS entirely based on a single-thread? Answer: Yes, its true, NodeJS processes all requests from a single thread. Meanwhile, it is also worth to be memorized that NodeJS makes use of events and callbacks to handle number of requests asynchronously.
 
+(21). How to use `request` package to make a POS request?
+
+```js
+var request = require("request");
+request.post(
+  "http://www.example.com/action",
+  { form: { key: "value" } },
+  function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      console.log(body);
+    }
+  }
+);
+```
+
 <b>20.</b>
