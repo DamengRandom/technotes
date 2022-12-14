@@ -684,4 +684,17 @@ request.post(
 );
 ```
 
+(22). How to create a http server using NodeJS?
+
+```js
+const http = require("http");
+const requestListener = function(req, res) {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Welcome viewers ..");
+};
+
+let server = http.createServer(requestListener);
+server.listen(8276);
+```
+
 <b>20.</b>
