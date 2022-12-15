@@ -697,4 +697,11 @@ let server = http.createServer(requestListener);
 server.listen(8276);
 ```
 
+(23). Difference between operational errors and programmer errors in NodeJS?
+
+Answer:
+
+- Pperational errors are not bugs, it is more related with system errors, like request timeout, hardware failures
+- Programmer errors are actual bugs created by developers during writing the code.
+
 <b>20.</b>
