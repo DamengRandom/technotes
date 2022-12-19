@@ -710,4 +710,6 @@ Answer:
 - Easier to do database integrations
 - Template engine functionality which allows develoepr to embed backend variables into HTML files
 
+(25). How NodeJS resolves blocking I/O operations? Answer: Event Loop, which convert all request tasks into callbacks ~
+
 <b>20.</b>
