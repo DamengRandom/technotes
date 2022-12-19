@@ -704,4 +704,10 @@ Answer:
 - Pperational errors are not bugs, it is more related with system errors, like request timeout, hardware failures
 - Programmer errors are actual bugs created by developers during writing the code.
 
+(24). Advantages of using ExpressJS:
+
+- Have mioddlware functionalities support
+- Easier to do database integrations
+- Template engine functionality which allows develoepr to embed backend variables into HTML files
+
 <b>20.</b>
