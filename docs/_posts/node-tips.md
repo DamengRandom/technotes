@@ -716,4 +716,11 @@ Answer:
 
 Answer: a stable version, which received the past crticial errors or bug fixes (better choice)
 
+(27). Difference between `process.nextTick()` and `setImmediate()` in NodeJS?
+
+Answer:
+
+- `process.nextTick()`: simply calls the callback function once the ongoing execution of event loop is finished
+- `setImmeidate()`: execute the callback function on the next cycle of event loop and it give back event loop to execute any other I/O operations
+
 <b>20.</b>
