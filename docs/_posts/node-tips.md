@@ -712,4 +712,8 @@ Answer:
 
 (25). How NodeJS resolves blocking I/O operations? Answer: Event Loop, which convert all request tasks into callbacks ~
 
+(26). What is LTS (Long Term Support) releases in NodeJS?
+
+Answer: a stable version, which received the past crticial errors or bug fixes (better choice)
+
 <b>20.</b>
