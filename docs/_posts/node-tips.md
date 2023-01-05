@@ -723,4 +723,8 @@ Answer:
 - `process.nextTick()`: simply calls the callback function once the ongoing execution of event loop is finished
 - `setImmeidate()`: execute the callback function on the next cycle of event loop and it give back event loop to execute any other I/O operations
 
+(28). Difference between `req.params` and `req.query` in NodeJS?
+
+Answer: params is a part of path in URL and which are URL variables, and query is a part of URL and which assign values to specific parameters
+
 <b>20.</b>
