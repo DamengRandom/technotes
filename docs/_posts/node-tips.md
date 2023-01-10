@@ -729,4 +729,6 @@ Answer: params is a part of path in URL and which are URL variables, and query i
 
 (29). `multer`: A package for handling file upload ~
 
+(30). `dotenv`: is acpakge which is used for inject global variables into the NodeJS codebase ~
+
 <b>20.</b>
