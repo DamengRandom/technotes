@@ -731,4 +731,15 @@ Answer: params is a part of path in URL and which are URL variables, and query i
 
 (30). `dotenv`: is acpakge which is used for inject global variables into the NodeJS codebase ~
 
+(31). ExpressJS `app.all()` function:
+
+```js
+// In ExpressJS, we can define a route which support all type of request, one of good examples are using all route to proof a API has been called, eg:
+
+app.all("/user", (req, res, next) => {
+  console.log("User API called");
+  next();
+});
+```
+
 <b>20.</b>
